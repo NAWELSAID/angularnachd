@@ -1,0 +1,33 @@
+<section class="team dsn-container section-margin" data-dsn-title="Our Team">
+
+    <div class="inner">
+      <h2 class="title-block  border-section-bottom dsn-up"> Our Team </h2>
+    </div>
+
+    <div class="team-inner d-grid grid-lg-3 grid-md-2">
+      <div *ngFor="let t  of membre " class="team-item grid-item">
+        <div  class="team-item-inner">
+          <div  class="box-text border-before">
+            <span class="position">{{t.position}} </span>
+            <h4 class="name">{{t.name}} </h4>
+          </div>
+          <div class="box-img">
+            <img class="nou" src="{{lien +t.photo}}" alt="">
+          </div>
+
+          <ul class="box-social">
+            <li data-dsn="parallax">
+              <a href="{{t.facebook}}">FB</a>
+            </li>
+            <li data-dsn="parallax">
+              <a href="{{t.linkedin}}">IN</a>
+            </li>
+            <li data-dsn="parallax">
+              <a href="{{t.cv}}">CV</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>

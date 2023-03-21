@@ -1,0 +1,39 @@
+<div class="dsn-container d-flex flex-column">
+    <h2 class="title-block  border-section-bottom dsn-up">OUR STORIES
+        <br>
+    </h2>
+    <div class="image-container">
+        <div  class="swiper-container ">
+            <div  class="swiper-wrapper transform-move-section move-left">
+                <div  *ngFor="let p  of  Stories" class="swiper-slide">
+                    <div class="image-item">
+                        <img src="{{lien+p.photo}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-container ">
+                <div class="swiper-wrapper transform-move-section">
+                    <div *ngFor="let p  of  Stories2" class="swiper-slide ">
+                        <div class="image-item">
+                            <img src="{{lien+p.photo}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-container ">
+                <div class="swiper-wrapper transform-move-section move-left">
+                    <div *ngFor="let p  of  Stories3" class="swiper-slide">
+                        <div class="image-item">
+                            <img src="{{lien+p.photo}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <a routerLink="/storis" class="link-custom v-light-head background-main image-zoom move-circle"
+                    data-dsn="parallax">
+                    view all
+                </a>
+            </div>
+        </div>
+    </div>

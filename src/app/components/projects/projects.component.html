@@ -1,0 +1,45 @@
+<section class="our-work dsn-container dsn-filter p-relative section-margin" data-dsn-title="Lasts Work">
+  <div class="inner">
+    <h2 class="title-block  border-section-bottom dsn-up">Projects</h2>
+  </div>
+
+  <div class="filtering d-flex justify-content-between mb-50">
+    <h3 class="title-block border-before">Latest Works</h3>
+    <div class="filtering-wrap w-auto">
+      <div class="filtering">
+        <div class="selector"></div>
+<!--         <button type="button" data-filter1="*" class="active">All</button>
+ -->        <button type="button" *ngFor="let p  of  category ; let i = index" [class]="i==0 ? 'active' : ''" [attr.data-filter]="'.cat'+p.id">
+          {{p.name_fr}} </button>
+<!--           <button type="button" data-filter="*" class="active">All</button>
+          <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
+            {{p.name_fr}} </button> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-list gallery work-gallery d-grid grid-md-2 grid-lg-3 dsn-isotope grid"
+    data-dsn-item=".work-item">
+    <div *ngFor="let p  of  lproject" class="work-item p-relative overflow-hidden {{'cat'+p.category}}">
+      <a class="w-100 p-relative effect-ajax" data-dsn-ajax="work">
+        <div class="img-next-box p-relative before-z-index">
+          <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt="">
+        </div>
+        <div class="box-content w-100 border-before mt-20">
+          <h4 class="title-block sec-title">
+            {{p.titre_fr}}
+          </h4>
+          <div class="metas">
+          </div>
+          <div class="view-project">{{p.date}}</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div>
+    <a routerLink="/projects" class="link-custom v-light-head background-main image-zoom move-circle"
+      data-dsn="parallax">
+      view all
+    </a>
+  </div>
+</section>

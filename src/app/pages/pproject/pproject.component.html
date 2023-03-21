@@ -1,0 +1,138 @@
+<app-header></app-header>
+<main class="main-root">
+
+    <div class="site-header dsn-load-animate dsn-container">
+        <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+            <div class="inner-header p-relative">
+                <div class="main-logo">
+                    <a href="index.html" data-dsn="parallax">
+                        <img class="light-logo"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-dsn-src="assets/photo/logo-light.png" alt="5">
+                        <img class="dark-logo"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-dsn-src="assets/photo/logo-dark.png " alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== side box left ========== -->
+    <div class="side-bar-full">
+        <div class="side-box-left z-index-1">
+            <div class="side-menu border-left border-right p-relative h-100 d-flex justify-content-center">
+                <div class="inner-header p-relative">
+                    <div class="footer-item">
+                        <a routerLink="/home" class="logo-footer m-auto">
+                            <img src="assets/photo/startup-light.png" alt="" class="logo-dark cover-bg-img">
+                            <img src="assets/photo/startup.png" alt="" class="logo-light cover-bg-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-box-right text-stroke border-right text-uppercase z-index-2 special">
+            <div class="text-inner over-hidden">
+                <div class="text-stroke-box">
+                    <div class="text-stroke-inner">Our Projects</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End side box left ========== -->
+
+    <div class="p-fixed before-z-index h-100 left-bar" data-overlay="5" data-dsn-ajax="img">
+        <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-dsn-src="assets/photo/image38.jpeg" alt="" data-dsn-position="50% 32%">
+    </div>
+
+    <div id="dsn-scrollbar">
+        <div class=" inner-content">
+            <!-- ========== Header Section ========== -->
+            <header class="p-relative dsn-header-animation full-width over-hidden h-v-100 v-dark-head">
+
+
+                <div class="box-content  align-items-center">
+                    <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
+                        data-dsn-ajax="img">
+                        <img class="cover-bg-img dsn-hero-parallax-img "
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-dsn-src="assets/photo/image46.jpg"
+                            data-dsn-srcset="assets/photo/image46.jpg 1800w,assets/photo/image46.jpg 768w" alt=""
+                            data-dsn-position="10% 10%">
+                    </div>
+                    <div class="hero-content dsn-container">
+                        <div class="has-box-mod p-relative move-circle" data-dsn="parallax" data-dsn-color="#393531">
+                            <h1 class="title">
+                                <span class="letter-stroke">Our </span> <br>
+                                <span class="line-bg-left pl-80">projects-list</span>
+                            </h1>
+                        </div>
+
+                        <div class="metas mt-25">
+                            <span class="text-uppercase"> Some Of Our Projects</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- ========== End Header Section ========== -->
+
+            <div class="wrapper ">
+
+                <!-- ========== Work Section ========== -->
+                <section class="our-work work-list dsn-filter dsn-container dsn-filter p-relative section-margin">
+
+                    <div class="filtering d-flex justify-content-between mb-50">
+                        <h3 class="title-block border-before">Our projects-list</h3>
+                        <div class="filtering-wrap w-auto">
+                            <div class="filtering">
+                                <div class="selector"></div>
+                                <!-- <button type="button" data-filter="*" class="active">All</button> -->
+                                <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
+                                    {{p.name_fr}} </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projects-list background-main gallery dsn-isotope " data-dsn-item=".work-item">
+                        <div *ngFor="let p  of  project" class="work-item border-bottom {{'cat'+p.category}}">
+                            <div class="d-grid grid-lg-2 align-items-center">
+                                <div class="title-meta">
+                                    <div class="metas">
+                                        <span>NACHD-it</span>
+                                    </div>
+                                    <div class="text-inner p-relative">
+                                        <a class="texts effect-ajax" data-dsn-ajax="work">
+                                            <h4 class="heading-h2 sec-title has-box-mod move-circle"
+                                                data-dsn="parallax">
+                                                {{p.titre_fr}}
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div class="description border-before mt-30">
+                                        <p>{{p.description_fr}}</p>
+                                    </div>
+                                </div>
+                                <div class="box-img p-relative ">
+                                    <a data-dsn-ajax="work" class="effect-ajax img-next-box before-z-index"
+                                        data-overlay="5">
+                                        <img class="cover-bg-img " data-dsn-position="50% 10%" src="{{lien+p.photo}}"
+                                            alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ========== End Work Section ========== -->
+                <app-footer></app-footer>
+            </div>
+        </div>
+
+
+    </div>
+    <app-contact></app-contact>
+
+</main>

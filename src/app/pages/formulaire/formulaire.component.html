@@ -1,0 +1,104 @@
+<app-header></app-header>
+<main class="main-root">
+    <div class="site-header dsn-load-animate dsn-container">
+        <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+            <div class="inner-header p-relative">
+                <div class="main-logo">
+                    <a href="index.html" data-dsn="parallax">
+                        <img class="light-logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/photo/logo-light.png" alt="5">
+                        <img class="dark-logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/photo/logo-dark.png " alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    <!-- ========== side box left ========== -->
+    <div class="side-bar-full"> 
+        <div class="side-box-left z-index-1">
+          <div class="side-menu border-left border-right p-relative h-100 d-flex justify-content-center">
+            <div class="inner-header p-relative">
+              <div class="footer-item">
+                <a routerLink="/home"class="logo-footer m-auto">
+                  <img src="assets/photo/startup-light.png" alt="" class="logo-dark cover-bg-img">
+                  <img src="assets/photo/startup.png" alt="" class="logo-light cover-bg-img">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="side-box-right text-stroke border-right text-uppercase z-index-2">
+          <div class="text-inner over-hidden">
+            <div class="text-stroke-box">
+              <div class="text-stroke-inner">Contact</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- ========== End side box left ========== -->
+
+    <div class="p-fixed before-z-index h-100 left-bar" data-overlay="5" data-dsn-ajax="img">
+        <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/photo/image39.jpg" alt="">
+    </div>
+
+    <div id="dsn-scrollbar">
+        <div class=" inner-content">
+            <div class="wrapper ">
+
+
+                <!--=== gallery-portfolio ===-->
+                <section class="our-work work-list dsn-filter  dsn-filter p-relative section-margin">
+                    <div class="dsn-container contact-inner section-margin">
+                        <div class="section-title">
+                            <h2 class="heading-h2">Contact Us</h2>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-8 col-md-6">
+                                <div class="form-box d-flex flex-column">
+                                    <h4 class="title-block p-relative mb-30 text-uppercase border-section-bottom ">
+                                        Remplissez le plus d'informations possible </h4>
+                                    <form id="contact-form" class="form w-100 " method="post" action="contact.php" data-toggle="validator">
+                                        <div class="messages"></div>
+                                        <div class="input__wrap controls">
+                                            <div class="form-group">
+                                                <div class="entry-box">
+                                                    <label> name </label>
+                                                    <input id="form_name" type="text" name="name" placeholder="Type your name" required="required" data-error="name is required.">
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="entry-box">
+                                                    <label>Your E-Mail *</label>
+                                                    <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="entry-box">
+                                                    <label>What's up?</label>
+                                                    <textarea id="form_message" class="form-control" name="message" placeholder="Tell us about you and the world" required="required" data-error="Please,leave us a message."></textarea>
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="text-right">
+                                                <div class="image-zoom w-auto d-inline-block move-circle" data-dsn="parallax">
+                                                    <input type="submit" value="Send Message" class="v-light">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=== End gallery-portfolio ===-->
+            </div>
+        </div>
+    </div>
+</main>

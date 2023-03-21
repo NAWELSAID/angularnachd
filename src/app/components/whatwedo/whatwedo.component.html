@@ -1,0 +1,19 @@
+<section class="services pb-section  dsn-container p-relative " data-dsn-title="Our Service">
+    <div class="inner">
+        <h2 class="title-block  border-section-bottom dsn-up">OUR services</h2>
+    </div>
+    <div class="d-grid dsn-isotope grid-md-2 grid-lg-3" data-dsn-item=".service-item">
+        <div  *ngFor="let p  of what_we_do " class="service-item p-relative border">
+            <div class="service-item-inner style-box">
+                <div class="icon">
+                    <img src="{{lien+p.icon}}" alt="">
+                </div>
+                <div class="content-box">
+                    <h4 class="title-block mt-20">{{p.name_fr}}</h4>
+                    <p class="description mt-20">{{p.description_fr}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

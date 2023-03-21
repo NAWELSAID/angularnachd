@@ -1,0 +1,102 @@
+
+  
+  <app-header></app-header>
+  <main class="main-root">
+    <div class="site-header dsn-load-animate dsn-container">
+      <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+          <div class="inner-header p-relative">
+              <div class="main-logo">
+                  <a  data-dsn="parallax">
+                       <img  class="light-logo" src="{{lien+tbprofile.nachd_light}}"  alt="5">
+                      <img   class="dark-logo" src="{{lien+tbprofile.nachd_dark}}"  alt="">
+                <!--       <img class="light-logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/photo/logo-light.png" alt="5">
+                      <img class="dark-logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/photo/logo-dark.png " alt="">
+                  --> </a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- ========== side box left ========== -->
+    
+    <div class="side-bar-full"> 
+      <div class="side-box-left z-index-1">
+        <div class="side-menu border-left border-right p-relative h-100 d-flex justify-content-center">
+          <div class="inner-header p-relative">
+            <div class="footer-item">
+              <a href="" class="logo-footer m-auto">
+                <img src="{{lien+tbprofile.startup_light}}" alt="" class="logo-dark cover-bg-img">
+                <img src="{{lien+tbprofile.startupdark}}" alt="" class="logo-light cover-bg-img">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side-box-right text-stroke border-right text-uppercase z-index-1 ">
+        <div class=" over-hidden ">
+          <div class="text-stroke-box ">
+            <div class="text-stroke-inner ">NACHD IT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== End side box left ========== -->
+  
+    <div class="p-fixed has-parallax-header has-parallax-header v-dark-head background-main">
+      <div class="p-absolute z-index-0 before-z-index h-100 w-100 " data-overlay="3" data-dsn-ajax="img">
+        <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-dsn-src="assets/photo/image34.jpg" alt="" data-dsn-position="50% 32%">
+      </div>
+    </div>
+  
+  
+    <div id="dsn-scrollbar">
+      <div class=" inner-content">
+        <!-- ========== Header ========== -->
+        <header class="p-relative h-v-100 v-dark-head dsn-header-animation border-bottom">
+  
+          <div class="box-content dsn-container align-items-center ">
+            <div class="hero-content dsn-hero-parallax-title">
+              <h1 class="title has-box-mod">
+                NACHD-IT <br /> <small>
+                  <h3>{{tbprofile.logo}} </h3>
+                </small>
+                <span class="p-absolute w-100 h-70 bottom-0 bg-mod-exclusion left-0 " data-dsn="parallax"></span>
+              </h1>
+              <div class="description border-before mt-30 mb-30">
+                <h3 class="title-block ah-headline letters scale">
+                    <span class="fw-400">WE DO : </span>
+                    <span  class="ah-words-wrapper fw-400">
+                       
+                        <b *ngFor="let p  of what_we_do ; let i = index "  class="{{ i == 0 ? 'is-visible' : ''}}">{{p.name_fr}}</b>
+                    </span>
+                </h3>
+            </div>
+              <a   routerLink="/about" class="link-custom v-light-head background-main image-zoom move-circle"
+                data-dsn="parallax">
+                About Us
+              </a>
+            </div>
+  
+          </div>
+        </header>
+        <!-- ========== End Header ========== -->
+        <!-- ========== About Me Section ========== -->
+        <div class="section-image section-move-image v-light section-padding p-relative">
+          <app-storis></app-storis>
+          <app-post></app-post>
+          <app-whatwedo></app-whatwedo>
+                 <!-- ==========  <app-service></app-service> ========== -->
+          <app-solustion></app-solustion>
+          <app-projects></app-projects>
+          <app-team></app-team>
+          <app-feedback></app-feedback> 
+          <!-- ========== Footer ========== -->
+          <app-footer></app-footer>
+          <!-- ========== End Footer ========== -->
+        </div>
+      </div>
+  
+      <!-- ========== Contact Stories ========== -->
+    </div>
+    <!-- ========== End Contact Stories ========== -->
+  </main>

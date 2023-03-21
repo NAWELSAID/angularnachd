@@ -1,0 +1,174 @@
+<app-header></app-header>
+<main class="main-root">
+    <div class="site-header dsn-load-animate dsn-container">
+        <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+            <div class="inner-header p-relative">
+                <div class="main-logo">
+                    <a href="index.html" data-dsn="parallax">
+                        <img class="light-logo"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-dsn-src="assets/photo/logo-light.png" alt="5">
+                        <img class="dark-logo"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-dsn-src="assets/photo/logo-dark.png " alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== side box left ========== -->
+    <div class="side-bar-full">
+        <div class="side-box-left z-index-1">
+            <div class="side-menu border-left border-right p-relative h-100 d-flex justify-content-center">
+                <div class="inner-header p-relative">
+                    <div class="footer-item">
+                        <a routerLink="/home" class="logo-footer m-auto">
+                            <img src="assets/photo/startup-light.png" alt="" class="logo-dark cover-bg-img">
+                            <img src="assets/photo/startup.png" alt="" class="logo-light cover-bg-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-box-right text-stroke border-right text-uppercase z-index-2 special ">
+            <div class="text-inner over-hidden">
+                <div class="text-stroke-box">
+                    <div class="text-stroke-inner">Storis</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== End side box left ========== -->
+
+    <div class="p-fixed before-z-index h-100 left-bar" data-overlay="5" data-dsn-ajax="img">
+        <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-dsn-src="assets/photo/image14.jpg" alt="">
+    </div>
+
+    <div id="dsn-scrollbar">
+        <div class=" inner-content">
+            <header class="p-relative dsn-header-animation full-width over-hidden h-v-100 v-dark-head">
+
+
+                <div class="box-content  align-items-center">
+                    <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
+                        data-dsn-ajax="img">
+                        <img class="cover-bg-img dsn-hero-parallax-img "
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-dsn-src="assets/photo/image46.jpg"
+                            data-dsn-srcset="assets/photo/image46.jpg 1800w,assets/photo/image46.jpg 768w" alt=""
+                            data-dsn-position="10% 10%">
+                    </div>
+                    <div class="hero-content dsn-container">
+                        <div class="has-box-mod p-relative move-circle" data-dsn="parallax" data-dsn-color="#393531">
+                            <h1 class="title">
+                                <span class="letter-stroke">Our </span> <br>
+                                <span class="line-bg-left pl-80">Best Portfolio</span>
+                            </h1>
+                        </div>
+
+                        <div class="metas mt-25">
+                            <span class="text-uppercase"> Some Of Our Latest storis</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="wrapper ">
+                <section class="our-work dsn-container dsn-filter p-relative section-margin">
+                    <div class="filtering d-flex justify-content-between mb-50">
+                        <h3 class="title-block border-before">Our Latest</h3>
+                        <div class="filtering-wrap w-auto">
+                            <div class="filtering">
+                                <div class="selector"></div>
+                                <button type="button" data-filter="*" class="active">All</button>
+                                <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
+                                    {{p.name_fr}} </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="projects-list gallery v-dark-head work-hover d-grid grid-md-2 grid-lg-3 dsn-isotope"
+                        data-dsn-item=".work-item">
+
+                        <!--                         <div *ngFor="let p  of  Stories" class="work-item p-relative overflow-hidden ">
+                            <div  class="dsn-stories-gallery ">
+                                <a href="{{lien+p.photo}}"></a>
+                                <a href="{{lien+p.photo_deux}}"></a>
+                                <a href="{{lien+p.photo_trois}}"></a>
+                                <a href="{{lien+p.photo_quatre}}"></a>
+    
+                                <h4 class="sm-title-block has-box-mod move-circle" data-dsn="parallax">
+                                    {{p.title_fr}} <br>{{p.date}}
+                                </h4>
+                            </div>
+                            <div class="img-next-box p-relative before-z-index" >
+                                <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt="">
+                            </div>
+
+                            <div class="box-content w-100 mt-20">
+                                <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"
+                                    data-dsn-color="#393531">
+                                    {{p.title_fr}} <br>{{p.date}}
+                                </h4>
+                            </div>
+                        </div> -->
+                        <div *ngFor="let p  of  Stories"
+                            class="work-item p-relative overflow-hidden {{'cat'+p.category}}">
+                            <div class="img-next-box p-relative before-z-index">
+                                <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt=""> 
+                            </div>
+                            <div class="box-content w-100 mt-20">
+                                <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"
+                                    data-dsn-color="#393531">
+                                    {{p.title_fr}} <br>{{p.date}}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--=== gallery-portfolio ===-->
+                <!--                 <section class="our-work work-list dsn-filter  dsn-filter p-relative section-margin">
+                    <div class="filtering d-flex align-items-center dsn-container justify-content-between mb-50">
+                        <h3 class="title-block border-before"> Our Latest</h3>
+                        <div class="filtering-wrap w-auto">
+                            <div class="filtering">
+                                <div class="selector"></div>
+                                <button type="button" data-filter="*" class="active">ALL </button>
+                                <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
+                                    {{p.name_fr}} </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-portfolio section-margin dsn-stories v-dark-head" data-dsn-rowheight="300"
+                        data-dsn-margins="15">
+                        <div *ngFor="let p  of  Stories" class="dsn-stories-gallery {{'cat'+p.category}}">
+                            <a href="{{lien+p.photo}}"></a>
+                            <a href="{{lien+p.photo_deux}}"></a>
+                            <a href="{{lien+p.photo_trois}}"></a>
+                            <a href="{{lien+p.photo_quatre}}"></a>
+
+                            <h4 class="sm-title-block has-box-mod move-circle" data-dsn="parallax">
+                                {{p.title_fr}} <br>{{p.date}}
+                            </h4>
+                        </div>
+                    </div>
+                </section> -->
+                <!--=== End gallery-portfolio ===-->
+                <!-- ========== Footer ========== -->
+                <app-footer></app-footer>
+                <!-- ========== End Footer ========== -->
+
+            </div>
+        </div>
+
+
+    </div>
+    <app-contact></app-contact>
+
+</main>

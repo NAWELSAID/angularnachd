@@ -1,0 +1,66 @@
+<section class="our-work work-2 dsn-container dsn-filter p-relative section-margin" data-dsn-title="Our Work">
+  <h2 class="title-block  border-section-bottom dsn-up">NEW POST
+    <br />
+  </h2>
+  <div class="w-20 p-relative effect-ajax">
+  </div>
+  <div class="projects-list gallery work-gallery dsn-swiper" data-dsn-option='{"slidesPerView":3,"spaceBetween":30}'>
+    <div class="swiper-container">
+      <div class="swiper-wrapper v-dark-head">
+        <div *ngFor="let p  of  posts" class="swiper-slide">
+          <div  class="work-item p-relative overflow-hidden">
+            <a class="w-100 p-relative effect-ajax" data-dsn-ajax="work">
+              <div class="img-next-box p-relative before-z-index">
+                <img class="cover-bg-img " data-dsn-position="10% 10%"src="{{lien+p.photo}}" alt="">
+              </div>
+
+              <div class="box-content w-100 mt-20">
+                <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax" data-dsn-color="#393531">
+                  {{p.title_fr}}
+                </h4>
+                <div class="metas">
+                 <span> {{p.description_fr}}</span> 
+                </div>
+                <div class="view-project">MORE Details</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dsn-pagination mt-30 dsn-container d-flex justify-content-between">
+      <div class="swiper-next">
+        <div class="next-container">
+          <div class="container-inner">
+            <div class="triangle"></div>
+            <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+              <g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round" stroke-miterlimit="10">
+                <circle cx="12" cy="12" r="10.5"></circle>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-prev">
+        <div class="prev-container">
+          <div class="container-inner">
+            <div class="triangle"></div>
+            <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+              <g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round" stroke-miterlimit="10">
+                <circle cx="12" cy="12" r="10.5"></circle>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-20 p-relative effect-ajax">
+    <a routerLink="/posts" class="link-custom v-light-head background-main image-zoom move-circle" data-dsn="parallax">
+      View all publication
+    </a>
+  </div>
+
+
+</section>
