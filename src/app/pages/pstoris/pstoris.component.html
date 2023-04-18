@@ -1,37 +1,41 @@
 <app-header></app-header>
 <main class="main-root">
-    <div class="site-header dsn-load-animate dsn-container">
-        <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
-            <div class="inner-header p-relative">
-                <div class="main-logo">
-                    <a href="index.html" data-dsn="parallax">
-                        <img class="light-logo"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="assets/photo/logo-light.png" alt="5">
-                        <img class="dark-logo"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="assets/photo/logo-dark.png " alt="">
-                    </a>
-                </div>
+  <div class="site-header dsn-load-animate dsn-container">
+    <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+        <div class="inner-header p-relative">
+            <div class="main-logo">
+                <a  data-dsn="parallax">
+                     <img  class="light-logo" src="{{lien+tbprofile.nachd_light}}"  alt="5">
+                    <img   class="dark-logo" src="{{lien+tbprofile.nachd_dark}}"  alt="">
+             </a>
             </div>
         </div>
     </div>
-    <!-- ========== side box left ========== -->
-    <div class="side-bar-full">
-        <div class="side-box-left z-index-1">
-            <div class="side-menu border-left border-right p-relative h-100 d-flex justify-content-center">
-                <div class="inner-header p-relative">
-                    <div class="footer-item">
-                        <a routerLink="/home" class="logo-footer m-auto">
-                            <img src="assets/photo/startup-light.png" alt="" class="logo-dark cover-bg-img">
-                            <img src="assets/photo/startup.png" alt="" class="logo-light cover-bg-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <!-- ========== side box left ========== -->
+
+  <div class="side-bar-full">
+    <div class="side-box-left z-index-1">
+      <div class="side-menu border-left border-right p-relative h-100 d-flex justify-content-center">
+        <div class="inner-header p-relative">
+          <div class="footer-item">
+            <a href="" class="logo-footer m-auto">
+              <img src="{{lien+tbprofile.startup_light}}" alt="" class="logo-dark cover-bg-img">
+              <img src="{{lien+tbprofile.startupdark}}" alt="" class="logo-light cover-bg-img">
+            </a>
+          </div>
         </div>
+      </div>
+    </div>
         <div class="side-box-right text-stroke border-right text-uppercase z-index-2 special ">
-            <div class="text-inner over-hidden">
+          <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
+          data-dsn-ajax="img">
+          <img class="cover-bg-img dsn-hero-parallax-img "
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              src="{{lien+ariereplan.contact}}"
+              data-dsn-position="10% 10%">
+          </div>
+          <div class="text-inner over-hidden">
                 <div class="text-stroke-box">
                     <div class="text-stroke-inner">Storis</div>
                 </div>
@@ -42,7 +46,7 @@
 
     <div class="p-fixed before-z-index h-100 left-bar" data-overlay="5" data-dsn-ajax="img">
         <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-            data-dsn-src="assets/photo/image14.jpg" alt="">
+           src="{{lien+ariereplan.bandstori}}" alt="">
     </div>
 
     <div id="dsn-scrollbar">
@@ -55,8 +59,7 @@
                         data-dsn-ajax="img">
                         <img class="cover-bg-img dsn-hero-parallax-img "
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="assets/photo/image46.jpg"
-                            data-dsn-srcset="assets/photo/image46.jpg 1800w,assets/photo/image46.jpg 768w" alt=""
+                            src="{{lien+ariereplan.stori}}" alt=""
                             data-dsn-position="10% 10%">
                     </div>
                     <div class="hero-content dsn-container">
@@ -80,30 +83,18 @@
                 <section class="our-work dsn-container dsn-filter p-relative section-margin">
                     <div class="filtering d-flex justify-content-between mb-50">
                         <h3 class="title-block border-before">Our Latest</h3>
-                        <div class="filtering-wrap w-auto">
-                            <div class="filtering">
-                                <div class="selector"></div>
-                                <button type="button" data-filter="*" class="active">All</button>
-                                <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
-                                    {{p.name_fr}} </button>
-                            </div>
-                        </div>
                     </div>
 
 
                     <div class="projects-list gallery v-dark-head work-hover d-grid grid-md-2 grid-lg-3 dsn-isotope"
                         data-dsn-item=".work-item">
 
-                        <!--                         <div *ngFor="let p  of  Stories" class="work-item p-relative overflow-hidden ">
+                         <div *ngFor="let p  of  Stories" class="work-item p-relative overflow-hidden ">
                             <div  class="dsn-stories-gallery ">
                                 <a href="{{lien+p.photo}}"></a>
                                 <a href="{{lien+p.photo_deux}}"></a>
                                 <a href="{{lien+p.photo_trois}}"></a>
                                 <a href="{{lien+p.photo_quatre}}"></a>
-    
-                                <h4 class="sm-title-block has-box-mod move-circle" data-dsn="parallax">
-                                    {{p.title_fr}} <br>{{p.date}}
-                                </h4>
                             </div>
                             <div class="img-next-box p-relative before-z-index" >
                                 <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt="">
@@ -115,11 +106,13 @@
                                     {{p.title_fr}} <br>{{p.date}}
                                 </h4>
                             </div>
-                        </div> -->
-                        <div *ngFor="let p  of  Stories"
+                        </div>
+                      </div>
+                    </section>
+<!--                         <div *ngFor="let p  of  Stories"
                             class="work-item p-relative overflow-hidden {{'cat'+p.category}}">
                             <div class="img-next-box p-relative before-z-index">
-                                <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt=""> 
+                                <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt="">
                             </div>
                             <div class="box-content w-100 mt-20">
                                 <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"
@@ -127,40 +120,7 @@
                                     {{p.title_fr}} <br>{{p.date}}
                                 </h4>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!--=== gallery-portfolio ===-->
-                <!--                 <section class="our-work work-list dsn-filter  dsn-filter p-relative section-margin">
-                    <div class="filtering d-flex align-items-center dsn-container justify-content-between mb-50">
-                        <h3 class="title-block border-before"> Our Latest</h3>
-                        <div class="filtering-wrap w-auto">
-                            <div class="filtering">
-                                <div class="selector"></div>
-                                <button type="button" data-filter="*" class="active">ALL </button>
-                                <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
-                                    {{p.name_fr}} </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-portfolio section-margin dsn-stories v-dark-head" data-dsn-rowheight="300"
-                        data-dsn-margins="15">
-                        <div *ngFor="let p  of  Stories" class="dsn-stories-gallery {{'cat'+p.category}}">
-                            <a href="{{lien+p.photo}}"></a>
-                            <a href="{{lien+p.photo_deux}}"></a>
-                            <a href="{{lien+p.photo_trois}}"></a>
-                            <a href="{{lien+p.photo_quatre}}"></a>
-
-                            <h4 class="sm-title-block has-box-mod move-circle" data-dsn="parallax">
-                                {{p.title_fr}} <br>{{p.date}}
-                            </h4>
-                        </div>
-                    </div>
-                </section> -->
-                <!--=== End gallery-portfolio ===-->
-                <!-- ========== Footer ========== -->
+                        </div> -->
                 <app-footer></app-footer>
                 <!-- ========== End Footer ========== -->
 

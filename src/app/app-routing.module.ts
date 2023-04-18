@@ -8,7 +8,9 @@ import { SlidstorisComponent } from './components/slidstoris/slidstoris.componen
 import { StatistiqueComponent } from './components/statistique/statistique.component';
 import { VisualidentiteComponent } from './components/visualidentite/visualidentite.component';
 import { WhatwedoComponent } from './components/whatwedo/whatwedo.component';
+import { NachdumsfeedbackComponent } from './nachdumsfeedback/nachdumsfeedback.component';
 import { AboutComponent } from './pages/about/about.component';
+import { AprojectComponent } from './pages/aproject/aproject.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormulaireComponent } from './pages/formulaire/formulaire.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,10 +18,12 @@ import { PpostComponent } from './pages/ppost/ppost.component';
 import { PprojectComponent } from './pages/pproject/pproject.component';
 import { PsolustionComponent } from './pages/psolustion/psolustion.component';
 import { PstorisComponent } from './pages/pstoris/pstoris.component';
- 
+
+
 
 const routes: Routes = [
   {path :"home" , component : HomeComponent },
+  {path :"" , component : HomeComponent },
   {path :"posts" , component : PpostComponent },
   {path :"storis" , component : PstorisComponent },
   {path :"Nachd-UMS" , component : PsolustionComponent },
@@ -34,9 +38,12 @@ const routes: Routes = [
   {path :"whatwedo" , component : WhatwedoComponent },
   {path :"slidstoris" , component : SlidstorisComponent },
   {path :"formulaire" , component :FormulaireComponent },
+  {path :"nachdumsfeedback" , component :NachdumsfeedbackComponent },
+  {path :"aproject" , component :AprojectComponent },
 
 
- 
+
+
 ];
 
 @NgModule({

@@ -30,6 +30,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SlidstorisComponent } from './components/slidstoris/slidstoris.component';
 import { WwdComponent } from './components/wwd/wwd.component';
 import { FormulaireComponent } from './pages/formulaire/formulaire.component';
+import { NachdumsfeedbackComponent } from './nachdumsfeedback/nachdumsfeedback.component';
+import { AprojectComponent } from './pages/aproject/aproject.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,11 +61,14 @@ import { FormulaireComponent } from './pages/formulaire/formulaire.component';
     SlidstorisComponent,
     WwdComponent,
     FormulaireComponent,
+    NachdumsfeedbackComponent,
+    AprojectComponent,
         ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

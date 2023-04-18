@@ -8,22 +8,24 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class IdentiteComponent implements OnInit {
 
-  constructor( private identserv : ProductService) { }
-
-  content : any={}
-
-
+  constructor(private apis: ProductService) { }
+  aboutus;
+  ariereplan;
+  lien = this.apis.lien;
   ngOnInit(): void {
-this.identserv.getData()
-.subscribe((data:any)=>{
-  console.log(data)
-  this.content = data.content
-  
-}
-
-
-
-)
-    }
-
+  this.getdataaboutus();
+ this.getariereplan();
   }
+  getdataaboutus() {
+    this.apis.getdataaboutus().subscribe((res: any) => {
+      console.log('res', res)
+      this.aboutus = res;
+    })
+  }
+  getariereplan() {
+    this.apis.getariereplan().subscribe((res: any) => {
+      console.log('res', res)
+      this.ariereplan = res;
+    })
+  }
+}

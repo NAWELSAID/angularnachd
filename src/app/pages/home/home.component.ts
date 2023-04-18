@@ -13,10 +13,12 @@ export class HomeComponent implements OnInit {
   what_we_do = [{name_fr : ' k' }];
   tbprofile;
   nachdums;
+  ariereplan;
   lien = this.apis.lien;
   ngOnInit(): void {
     this.getDataService()
     this.getDataprofile()
+    this.getariereplan()
   }
   getDataService() {
     this.apis.getDataService().subscribe((res: any) => {
@@ -27,14 +29,19 @@ export class HomeComponent implements OnInit {
     this.apis.getDataprofile().subscribe((res: any) => {
       console.log('res',res)
       this.tbprofile = res;
-      
+
     })
-    
   }
   getDatanachdums() {
     this.apis.getDatanachdums().subscribe((res: any) => {
       console.log('res', res)
       this.nachdums = res;
+    })
+  }
+  getariereplan() {
+    this.apis.getariereplan().subscribe((res: any) => {
+      console.log('res', res)
+      this.ariereplan = res;
     })
   }
 }

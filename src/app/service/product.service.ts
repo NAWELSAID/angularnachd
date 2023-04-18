@@ -9,7 +9,10 @@ export class ProductService {
   constructor(private http : HttpClient) { }
 
   server = 'http://localhost:8000/api/'
-  lien= "http://localhost/tempadmin/storage/app/public/";
+  lien= "http://localhost/laravelnachdtemplate/storage/app/public/";
+  /* server = 'https://nawelsaid.alwaysdata.net/laravelnachdtemplate/public/api/'
+  lien= "https://nawelsaid.alwaysdata.net/laravelnachdtemplate/storage/app/public/"; */
+
 
 getData(){
   return this.http.get('https://work.alwaysdata.net/public/api/index')
@@ -65,5 +68,25 @@ getDatamembre(){
 getDatafeedback(){
   return this.http.get(this.server+'datafeedback')
 }
+getariereplan(){
+  return this.http.get(this.server+'dataariereplan')
 }
-
+getdatapartenair(){
+  return this.http.get(this.server+'datapartenaire')
+}
+getdataaboutus(){
+  return this.http.get(this.server+'dataaboutus')
+}
+getdatanachdumservice(){
+  return this.http.get(this.server+'datanachdumservice')
+}
+getDatanachdumsfeedback(){
+  return this.http.get(this.server+'datanachdumsfeedback')
+}
+setDatacontact(body){
+  return this.http.post(this.server+'datacontact' , body)
+}
+getDatabyprojects(){
+  return this.http.get(this.server+'databyproject')
+}
+}

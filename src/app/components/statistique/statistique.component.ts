@@ -8,23 +8,16 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class StatistiqueComponent implements OnInit {
 
-  constructor( private contentserv : ProductService) { }
-
-  content : any={}
-
- 
+  constructor(private apis: ProductService) { }
+  aboutus;
+  lien = this.apis.lien;
   ngOnInit(): void {
-this.contentserv.getData()
-.subscribe((data:any)=>{
-  console.log(data)
-  this.content = data.content
-  
-}
-
-
-
-)
-    }
-
+  this.getdataaboutus();
   }
-
+  getdataaboutus() {
+    this.apis.getdataaboutus().subscribe((res: any) => {
+      console.log('res', res)
+      this.aboutus = res;
+    })
+  }
+}

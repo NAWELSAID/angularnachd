@@ -1,71 +1,15 @@
                 <!-- ========== brand-client ========== -->
                 <div class="dsn-container brand-client mb-section " data-dsn-title="our clients">
-                    <div apropos.content class="box-info">
-                        <h2 class="heading-h2 border-section-bottom mb-30">
-                            OUR Partenaires 
-                        </h2>
-                    <div class="box-map section-margin">
-                    <div class="wrapper-client d-grid grid-lg-1  grid-md-6 grid dsn-isotope " data-dsn-item=".logo-box">
-                        <div class="logo-box ">
-                            <div class="logo-box-inner  background-section nounou">
-                                <img src="assets/photo/image45.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image41.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image41.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image43.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image44.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image41.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section  nounou">
-                                <img src="assets/photo/image45.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image43.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image42.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou ">
-                                <img src="assets/photo/image41.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box  ">
-                            <div class="logo-box-inner  background-section nounou">
-                                <img src="assets/photo/image45.png" alt="">
-                            </div>
-                        </div>
-                        <div class="logo-box ">
-                            <div class="logo-box-inner  background-section nounou">
-                                <img src="assets/photo/image40.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ========== End brand-client ========== -->
+                  <div apropos.content class="box-info">
+                      <h2 class="heading-h2 border-section-bottom mb-30">
+                          OUR Partenaires
+                      </h2>
+                  <div class="box-map section-margin">
+                  <div class="wrapper-client d-grid grid-lg-1  grid-md-6 grid dsn-isotope " data-dsn-item=".logo-box">
+                      <div *ngFor="let p  of  partenaire"  class="logo-box ">
+                          <div class="logo-box-inner  background-section nounou">
+                              <img src="{{lien+p.logo}}" alt="">
+                          </div>
+                      </div>
+                  </div>
+              </div>

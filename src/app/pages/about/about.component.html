@@ -31,16 +31,26 @@
                 </div>
             </div>
         </div>
-        <div class="side-box-right text-stroke border-right text-uppercase z-index-2 special">
-            <div class="text-inner over-hidden">
+        <div class="side-box-right text-stroke border-right text-uppercase z-index-2 special" >
+          <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
+          data-dsn-ajax="img">
+          <img class="cover-bg-img dsn-hero-parallax-img "
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              src="{{lien+ariereplan.contact}}"
+              data-dsn-position="10% 10%">
+          </div>
+          <div class="text-inner over-hidden" >
                 <div class="text-stroke-box">
-                    <div class="text-stroke-inner">About us</div>
+                    <div class="text-stroke-inner"  >About us</div>
                 </div>
             </div>
         </div>
     </div>
     <!-- ========== End side box left ========== -->
-
+    <div class="p-fixed before-z-index h-100 left-bar" data-overlay="5" data-dsn-ajax="img">
+      <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          src="{{lien+ariereplan.bandaboutus}}" alt="" data-dsn-position="50% 32%">
+  </div>
 
     <div id="dsn-scrollbar">
         <div class=" inner-content">
@@ -48,11 +58,8 @@
                 class="header-pages v-dark-head full-width h-v-100 section-padding p-relative dsn-header-animation over-hidden">
                 <div class="hero-img p-absolute w-100 dsn-hero-parallax-img  h-100 before-z-index top-0"
                     data-overlay="5" data-dsn-ajax="img">
-                    <div class=" " data-dsn="video">
-                        <video class="bg-image cover-bg dsn-video" preload="none" data-dsn-poster="" autoplay="" loop=""
-                            muted="" playsinline="">
-                            <source src="assets\photo/video.mp4" type="video/mp4">
-                        </video>
+                    <div class=" " data-dsn="video" id="vid">
+
                     </div>
                 </div>
 
@@ -60,13 +67,13 @@
                     <div class="dsn-container box-title p-relative z-index-1">
                         <div class="subtitle line-shap line-shap-after d-inline-block mb-20">
                             <span class="p-10 background-section">
-                                We pursue perfection
+                               {{aboutus.slide_title_fr}}
                             </span>
                         </div>
 
                         <h1 class="title  p-relative">NACHD IT</h1>
-                        <p class="mt-20 max-w570">We are going to make it happen</p>
-                        <div class="d-grid grid-sm-2 mt-30">
+                        <p class="mt-20 max-w570">{{aboutus.slide_content_fr}}</p>
+<!--                         <div class="d-grid grid-sm-2 mt-30">
                             <div class="item item-services-header d-flex align-items-center">
                                 <div class="icon p-20  heading-h2 border">
                                     <i class="fab fa-connectdevelop"></i>
@@ -90,16 +97,23 @@
                                         brings true happiness.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="d-grid grid-sm-2 mt-30">
+                          <div *ngFor="let p  of  what_we_do" class="item item-services-header d-flex align-items-center">
+                              <div class="icon p-20  heading-h2 border">
+                                <div class="content">
+                                  <h4 class="title-block mt-20" >{{p.name_fr}}</h4>
+                              </div>
+                              </div>
+                          </div>
+                      </div>
+                        <div class="d-grid grid-sm-2 mt-30" style="display: block;">
                             <app-statistique></app-statistique>
                         </div>
 
                     </div>
                 </div>
             </header>
-            <!-- ========== Header Section ========== -->
-            <!-- ========== End Header Section ========== -->
             <div class="wrapper ">
                 <!-- ========== About Section ========== -->
                 <app-identite></app-identite>
@@ -110,31 +124,27 @@
                 <!-- ========== End  box description 2col ========== -->
                 <app-partenaires></app-partenaires>
                 <!-- ========== Next Page ========== -->
-                <div class="dsn-container brand-client mb-section " data-dsn-title="our clients">
-                    <div apropos.content class="box-info">
+              <!--   <div class="dsn-container brand-client mb-section " data-dsn-title="our clients">
+                    <div class="box-info">
                         <h2 class="heading-h2 border-section-bottom mb-30">
                             Localisation
                         </h2>
                         <div class="box-map section-margin">
-
-                            <iframe class="map-custom p-absolute w-100 h-100"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3235.4913010568125!2d10.63536981457159!3d35.812419830374644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1302758ce6612a71%3A0xef9ba1ce6271c19!2sNACHD%20IT!5e0!3m2!1sfr!2stn!4v1663668579861!5m2!1sfr!2stn"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="{{aboutus.map}}"></iframe>
                         </div>
                     </div>
-                    <div class="next-page dsn-container border-top section-padding p-relative"
+                     <div class="next-page dsn-container border-top section-padding p-relative"
                         data-dsn-title="Contact Us">
                         <div class="full-bg background-section p-absolute h-100 special"></div>
-                        <h2 class="title special">
+                        <h4 class="title special">
                             <span class="letter-stroke  special"> LET’S DO </span>
                             <br> THE PROJECT TO GETHER
-                        </h2>
+                        </h4>
                         <a routerLink="/formulaire" class="link-custom p-relative mt-30 v-light">
                             Say Hello
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
                 <app-footer></app-footer>
             </div>

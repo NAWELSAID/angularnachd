@@ -1,4 +1,4 @@
-<section class="our-work dsn-container dsn-filter p-relative section-margin" data-dsn-title="Lasts Work">
+<section class="our-work dsn-container dsn-filter p-relative section-margin" data-dsn-title="Lasts projects">
   <div class="inner">
     <h2 class="title-block  border-section-bottom dsn-up">Projects</h2>
   </div>
@@ -8,19 +8,19 @@
     <div class="filtering-wrap w-auto">
       <div class="filtering">
         <div class="selector"></div>
-<!--         <button type="button" data-filter1="*" class="active">All</button>
- -->        <button type="button" *ngFor="let p  of  category ; let i = index" [class]="i==0 ? 'active' : ''" [attr.data-filter]="'.cat'+p.id">
+         <button type="button" data-filter1="*" class="active">All</button>
+         <button  type="button" *ngFor="let p  of  category " [attr.data-filter]="'.cat'+p.id" >
           {{p.name_fr}} </button>
 <!--           <button type="button" data-filter="*" class="active">All</button>
           <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
             {{p.name_fr}} </button> -->
       </div>
-    </div>
+    </div> 
   </div>
 
   <div class="projects-list gallery work-gallery d-grid grid-md-2 grid-lg-3 dsn-isotope grid"
     data-dsn-item=".work-item">
-    <div *ngFor="let p  of  lproject" class="work-item p-relative overflow-hidden {{'cat'+p.category}}">
+    <div *ngFor="let p  of  lproject" class="work-item p-relative overflow-hidden">
       <a class="w-100 p-relative effect-ajax" data-dsn-ajax="work">
         <div class="img-next-box p-relative before-z-index">
           <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt="">

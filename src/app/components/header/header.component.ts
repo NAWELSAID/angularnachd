@@ -9,17 +9,27 @@ import { ProductService } from 'src/app/service/product.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private apis: ProductService) { }
+
   tbprofile;
+  ariereplan;
   lien = this.apis.lien;
   ngOnInit(): void {
     this.getDataprofile()
+    this.getariereplan()
   }
   getDataprofile() {
     this.apis.getDataprofile().subscribe((res: any) => {
       console.log('res',res)
       this.tbprofile = res;
-      
+
     })
-    
+  }
+  getariereplan() {
+    this.apis.getariereplan().subscribe((res: any) => {
+      console.log('res', res)
+      this.ariereplan = res;
+    })
   }
 }
+
+

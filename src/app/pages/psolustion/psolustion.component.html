@@ -31,14 +31,24 @@
                 </div>
             </div>
             <div class="side-box-right text-stroke border-right text-uppercase z-index-2 special">
-                <div class="text-inner over-hidden">
+              <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
+              data-dsn-ajax="img">
+              <img class="cover-bg-img dsn-hero-parallax-img "
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  src="{{lien+ariereplan.contact}}"
+                  data-dsn-position="10% 10%">
+              </div>
+              <div class="text-inner over-hidden">
                     <div class="text-stroke-box">
                         <div class="text-stroke-inner">NACHD UMS</div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="p-fixed before-z-index h-100 left-bar" data-overlay="5" data-dsn-ajax="img">
+          <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              src="{{lien+ariereplan.bandnachdums}}" alt="" data-dsn-position="50% 32%">
+      </div>
 
         <div id="dsn-scrollbar">
             <div class="inner-content">
@@ -69,7 +79,7 @@
                 <div class="wrapper ">
 
                     <!-- ========== Intro Project ========== -->
-                    <div class="intro-project dsn-container section-margin">
+                    <div class="intro-project dsn-container section-margin" data-dsn-title="introduction">
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="intro-text p-relative">
@@ -78,7 +88,7 @@
                                             introduction the project
                                         </h2>
                                         <p class="dsn-up mt-30 max-w750"> {{nachdums.introduction_fr}}</p>
-                                        <a href="https://www.NACHD-it.com" target="_blank"
+                                        <a href="{{nachdums.line}}" target="_blank"
                                             class="btn-arrow w-100 d-flex align-items-center justify-content-between mt-30">
                                             <span>Visit site</span>
                                             <svg width="24" height="24" viewbox="0 0 24 24"
@@ -98,101 +108,76 @@
                                 <ul class="p-relative project-info ms-mt-block">
                                     <li>
                                         <h5>SERVICES</h5>
-                                        <span>Dev web</span>
+                                        <span>{{nachdums.domainedapplication}}</span>
                                     </li>
                                     <li>
                                         <h5>Industry </h5>
-                                        <span>ahmed ben hsouna</span>
+                                        <span>{{nachdums.devolope_par}}</span>
                                     </li>
                                     <li>
                                         <h5>Year</h5>
-                                        <span> 2021</span>
+                                        <span> {{nachdums.date}}</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <!-- ========== End Intro Project ========== -->
-                    <div class="dsn-container brand-client mb-section " data-dsn-title="our clients">
+                    <div class="dsn-container brand-client mb-section " data-dsn-title="About Us">
 
-                        <section class="about-me p-relative pt-section section-margin " data-dsn-title="About Us">
-                        
+                        <section class="about-me p-relative pt-section section-margin " >
+
                             <div class="dsn-container  p-relative special">
                                 <div class="p-absolute w-70 h-100 right-0 background-section custom-background-section z-index-0 top-0 special">
                                 </div>
-                        
+
                                 <div class="d-grid p-relative grid-lg-2 padding-block z-index-1">
                                     <div class="box-img">
                                         <div class="h-100" data-dsn-grid="move-up">
-                                            <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/photo/image18.jpg" alt="">
+                                            <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" src="{{lien+nachdums.icon_nachdums}}" alt="">
                                         </div>
-                        
+
                                     </div>
                                     <div apropos.content class="box-info ">
                                         <h2 class="heading-h2 border-section-bottom mb-30 special ">
                                             what is NACHD UMS
                                         </h2>
-                                        <p class="mb-10 special">description</p>
+                                        <p class="mb-10 special">{{nachdums.description_fr}}</p>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         </div>
-                    <section class="blog dsn-container p-relative section-margin" data-dsn-title="Our Blog">
+                    <section class="blog dsn-container p-relative section-margin" data-dsn-title="Our services">
                         <div class="inner">
                             <h2 class="title-block  border-section-bottom dsn-up">
                                 our services</h2>
                         </div>
 
-                        <div class="blog-content">
-                            <div class="blog-item p-relative pt-50 pb-50 border-bottom">
-                                <div class="blog-item-inner p-relative spec">
-                                    <div class="left-box">
-                                            <h4 class="title-block">Creativity is nothing but <br> a mind set free</h4>
+                        <div  class="blog-content">
+                            <div *ngFor="let p  of  service" class="blog-item p-relative pt-50 pb-50 border-bottom">
+                                <div  class="blog-item-inner p-relative spec">
+                                    <div  class="left-box">
+                                            <h4 class="title-block">{{p.service_fr}}</h4>
                                     </div>
 
                                     <div class="right-box">
-                                        <p class="max-w570">Lorem ipsum is simply dummy text printing typesetting
-                                            industry lorem ipsum been dummy...</p>
+                                        <p class="max-w570">{{p.description_fr}}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <!-- 
-                <div class="intro-project dsn-container section-margin">
-                    <div class="inner">
-                        <h2 class="title-block  border-section-bottom dsn-up">
-                           Our services
-                         </h2>
-                    </div>
-                    <div class="d-grid dsn-isotope grid-md-2 grid-lg-3" data-dsn-item=".service-item">
-                        <div  *ngFor="let w  of what_we_do " class="service-item p-relative border">
-                            <div class="service-item-inner style-box">
-                                <div class="icon">
-                                    <img src="assets/img/services/developing.svg" alt="">
-                                </div>
-                                <div class="content-box">
-                                    <h4 class="title-block mt-20">{{w.title_fr}}</h4>
-                                    <p class="description mt-20">{{w.description_fr}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
+                    <app-nachdumsfeedback></app-nachdumsfeedback>
                     <!-- ========== Video Section ========== -->
-                    <div class="section-video section-margin p-relative">
+                    <div class="section-video section-margin p-relative" data-dsn-title="Video Explicative">
                         <div class="bg-section p-relative">
                             <div class="before-z-index" data-dsn-grid="move-up" data-overlay="5">
                                 <img class="cover-bg-img"
                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-dsn-src="assets/photo/image13.jpg"
-                                    data-dsn-srcset="assets/photo/image13.jpg 1800w,assets/photo/image13.jpg 768w"
+                                   src="{{lien+nachdums.icon_nachdums}}"
                                     alt="">
                             </div>
-
                             <a href="https://vimeo.com/175353205" class="vid c-hidden v-middle z-index-2">
                                 <div class="play-btn image-zoom background-main heading-color move-circle"
                                     data-dsn="parallax">PLAY
@@ -203,25 +188,18 @@
                     <!-- ========== End Video Section ========== -->
 
                     <!-- ========== 2 col image with pop image ========== -->
-                    <div class="section-margin has-popup over-hidden p-relative">
-                        <div class="dsn-container">
-                            <div class="d-grid grid-md-2  over-hidden">
-                                <a href="assets/img/project/project1/3.jpg"
+                    <div class="section-margin has-popup over-hidden p-relative" data-dsn-title="Gallery" >
+                      <div  class="section-margin has-popup over-hidden p-relative">
+                        <div *ngfor="let p  of multi; let i = index"  class="dsn-container">
+                            <div   class="d-grid grid-md-2  over-hidden">
+                                <a
                                     class="p-relative over-hidden h-v-60 d-flex">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="assets/photo/image14.jpg"
-                                        data-dsn-srcset="assets/photo/image14.jpg 1800w,assets/photo/image14.jpg 768w"
-                                        alt="" class="cover-bg-img">
-                                </a>
-                                <a href="assets/img/project/project1/4.jpg"
-                                    class="p-relative over-hidden h-v-60 d-flex">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="assets/photo/image18.jpg"
-                                        data-dsn-srcset="assets/photo/image18.jpg 1800w,assets/photo/image18.jpg 768w"
-                                        alt="" class="cover-bg-img">
+                                        src="{{lien+p}}">
                                 </a>
                             </div>
                         </div>
+                    </div>
                     </div>
 
                     <app-footer></app-footer>

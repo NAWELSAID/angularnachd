@@ -13,15 +13,25 @@ export class ProjectsComponent implements OnInit {
 
   project = [];
   lproject = [];
+  projects = []
+  last_projects = []
   category=[];
   lien = this.apis.lien;
   ngOnInit(): void {
     this.getDataLastprojects()
     this.getDataCategoriprojects()
+    this.getDataprojects()
   }
-    getDataLastprojects() {
+  getDataprojects() {
+    this.apis.getDataprojects().subscribe((res: any) => {
+      this.lproject = res;
+      this.last_projects = res;
+    })
+  }
+  getDataLastprojects() {
       this.apis.getDataLastprojects().subscribe((res: any) => {
         this.lproject = res;
+
       })
   }
   getDataCategoriprojects() {
@@ -29,5 +39,6 @@ export class ProjectsComponent implements OnInit {
       this.category = res;
     })
   }
+
   }
 

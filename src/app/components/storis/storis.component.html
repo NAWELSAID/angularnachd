@@ -1,13 +1,13 @@
-<div class="dsn-container d-flex flex-column">
+<div class="dsn-container d-flex flex-column " data-dsn-title="storis">
     <h2 class="title-block  border-section-bottom dsn-up">OUR STORIES
         <br>
     </h2>
     <div class="image-container">
         <div  class="swiper-container ">
             <div  class="swiper-wrapper transform-move-section move-left">
-                <div  *ngFor="let p  of  Stories" class="swiper-slide">
+                <div  *ngFor="let p  of  Stories" class="swiper-slide" >
                     <div class="image-item">
-                        <img src="{{lien+p.photo}}" alt="">
+                        <img  class="cover-bg-img " data-dsn-position="10% 10%" style="margin: 10px 10px 10px 10px;" src="{{lien+p.photo}}" alt="">
                     </div>
                 </div>
             </div>

@@ -28,7 +28,14 @@
             </div>
         </div>
         <div class="side-box-right text-stroke border-right text-uppercase z-index-2 special">
-            <div class="text-inner over-hidden">
+          <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
+          data-dsn-ajax="img">
+          <img class="cover-bg-img dsn-hero-parallax-img "
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              src="{{lien+ariereplan.contact}}"
+              data-dsn-position="10% 10%">
+          </div>
+          <div class="text-inner over-hidden">
                 <div class="text-stroke-box">
                     <div class="text-stroke-inner">Our News</div>
                 </div>
@@ -39,7 +46,7 @@
 
     <div class="p-fixed before-z-index h-100 left-bar" data-overlay="5" data-dsn-ajax="img">
         <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-            data-dsn-src="assets/photo/image38.jpeg" alt="" data-dsn-position="50% 32%">
+            src="{{lien+ariereplan.bandarticule}}" alt="" data-dsn-position="50% 32%">
     </div>
 
     <div id="dsn-scrollbar">
@@ -52,9 +59,7 @@
                     <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
                         data-dsn-ajax="img">
                         <img class="cover-bg-img dsn-hero-parallax-img "
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="assets/photo/image46.jpg"
-                            data-dsn-srcset="assets/photo/image46.jpg 1800w,assets/photo/image46.jpg 768w" alt=""
+                            src="{{lien+ariereplan.articule}}"
                             data-dsn-position="10% 10%">
                     </div>
                     <div class="hero-content dsn-container">
@@ -87,7 +92,7 @@
                                 <div class="selector"></div>
                                 <button type="button" data-filter="*" class="active">All</button>
                                 <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
-                                    {{p.name_fr}} </button>
+                                  {{p.name_fr}} </button>
                             </div>
                         </div>
                     </div>

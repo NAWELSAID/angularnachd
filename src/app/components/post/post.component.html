@@ -1,10 +1,10 @@
-<section class="our-work work-2 dsn-container dsn-filter p-relative section-margin" data-dsn-title="Our Work">
+<section *ngIf="posts && posts.length >0" class="our-work work-2 dsn-container dsn-filter p-relative section-margin" data-dsn-title="New Posts">
   <h2 class="title-block  border-section-bottom dsn-up">NEW POST
     <br />
   </h2>
   <div class="w-20 p-relative effect-ajax">
   </div>
-  <div class="projects-list gallery work-gallery dsn-swiper" data-dsn-option='{"slidesPerView":3,"spaceBetween":30}'>
+<!--   <div class="projects-list gallery work-gallery dsn-swiper" data-dsn-option='{"slidesPerView":3,"spaceBetween":30}'>
     <div class="swiper-container">
       <div class="swiper-wrapper v-dark-head">
         <div *ngFor="let p  of  posts" class="swiper-slide">
@@ -19,7 +19,7 @@
                   {{p.title_fr}}
                 </h4>
                 <div class="metas">
-                 <span> {{p.description_fr}}</span> 
+                 <span> {{p.description_fr}}</span>
                 </div>
                 <div class="view-project">MORE Details</div>
               </div>
@@ -55,7 +55,30 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <div class="slider-about pb-section dsn-container  dsn-swiper p-relative " data-dsn-option='{"slidesPerView" : 2.3}'>
+    <div class="swiper-container">
+        <div class="swiper-wrapper v-dark-head">
+            <div *ngFor="let p  of  posts" class="swiper-slide">
+                <div class="box-item-inner p-relative h-v-70 d-flex justify-content-center align-items-center pl-20 pr-20" data-swiper-parallax-scale="0.85" style="padding:0">
+                    <div class="w-100 h-100 p-absolute top-0" data-overlay="5">
+                        <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" src="{{lien+p.photo}}" alt="">
+                    </div>
+                    <div class="postt">
+                    <div>
+                      <h3 class="heading-h2 letter-stroke" data-swiper-parallax-opacity="0">{{p.title_fr}}</h3>
+                    </div>
+                    <br>
+                    <div class="metas">
+                      <span> {{p.date}}</span>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-absolute w-100 h-50 bottom-0 left-0 background-section"></div>
+</div>
   <div class="w-20 p-relative effect-ajax">
     <a routerLink="/posts" class="link-custom v-light-head background-main image-zoom move-circle" data-dsn="parallax">
       View all publication

@@ -11,10 +11,14 @@ export class PstorisComponent implements OnInit {
   constructor(private apis:ProductService) { }
   Stories = [];
   category= [];
+  ariereplan;
+  tbprofile;
   lien = this.apis.lien
   ngOnInit(): void {
     this.getDataAlllaststories()
     this.getDataCategoristory()
+    this.getariereplan()
+    this.getDataprofile()
   }
   getDataAlllaststories(){
       this.apis.getDataAlllaststories().subscribe((res: any) => {
@@ -26,6 +30,19 @@ export class PstorisComponent implements OnInit {
       this.apis.getDataCategoristory().subscribe((res: any) => {
         this.category = res;
         console.log(this.category)
+      })
+    }
+    getariereplan() {
+      this.apis.getariereplan().subscribe((res: any) => {
+        console.log('res', res)
+        this.ariereplan = res;
+      })
+    }
+    getDataprofile() {
+      this.apis.getDataprofile().subscribe((res: any) => {
+        console.log('res',res)
+        this.tbprofile = res;
+
       })
     }
   }
