@@ -1,3 +1,5 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
 <app-header></app-header>
 <main class="main-root">
 
@@ -66,13 +68,12 @@
                     <div class="hero-content dsn-container">
                         <div class="has-box-mod p-relative move-circle" data-dsn="parallax" data-dsn-color="#393531">
                             <h1 class="title">
-                                <span class="letter-stroke">Our </span> <br>
-                                <span class="line-bg-left pl-80">Our Projects-List</span>
+                                <span class="letter-stroke">{{'Our Projects'|translate}} </span> <br>
                             </h1>
                         </div>
 
                         <div class="metas mt-25">
-                            <span class="text-uppercase"> Some Of Our Projects</span>
+                            <span class="text-uppercase"> {{'Some Of Our Projects'|translate}}</span>
                         </div>
                     </div>
 
@@ -86,53 +87,53 @@
                 <!-- ========== Work Section ========== -->
                 <section class="our-work work-list dsn-filter dsn-container dsn-filter p-relative section-margin">
 
-                    <div class="filtering d-flex justify-content-between mb-50">
-                        <h3 class="title-block border-before">Our projects-list</h3>
-                        <div class="filtering-wrap w-auto">
-                          <div class="filtering">
-                              <div class="selector"></div>
-                              <button type="button" data-filter="*" class="active">All</button>
-                              <button type="button"  *ngFor="let p  of  category" (click)="onSubmit(p.id)">
-                                {{p.name_fr}} </button>
+                  <div class="filtering d-flex justify-content-between mb-50">
+                      <h3 class="title-block border-before">{{'Our Projects'|translate}}</h3>
+                      <div class="filtering-wrap w-auto">
+                        <div class="filtering">
+                            <div class="selector"></div>
+                            <button type="button" data-filter="*" class="{{select == 'all' ? 'active': ''}}" (click)="allproject()">{{'All'|translate}}</button>
+                            <button type="button"  *ngFor="let p  of  what_we_do " class="{{select == p.id ? 'active': ''}}" (click)="onSubmit(p.id)">
+                              {{translate.currentLang=='fr'? p.name_fr :p.name_en}}</button>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="projects-list background-main gallery  ">
+                      <div *ngFor="let p  of  project" class="work-item border-bottom">
+                          <div class="d-grid grid-lg-2 align-items-center">
+                              <div class="title-meta">
+                                  <div class="metas">
+                                      <span>NACHD-it</span>
+                                  </div>
+                                  <div class="text-inner p-relative">
+                                      <a class="texts effect-ajax" data-dsn-ajax="work">
+                                          <h4 class="heading-h2 sec-title has-box-mod move-circle"
+                                              data-dsn="parallax">
+                                              {{translate.currentLang=='fr'? p.titre_fr :p.titre_en}}
+                                          </h4>
+                                      </a>
+                                  </div>
+                                  <div class="description border-before mt-30">
+                                      <p>{{translate.currentLang=='fr'? p.description_fr :p.description_en}}</p>
+                                  </div>
+                              </div>
+                              <div class="box-img p-relative ">
+                                  <a data-dsn-ajax="work" class="effect-ajax img-next-box before-z-index">
+                                      <img class="cover-bg-img " data-dsn-position="50% 10%" src="{{lien+p.photo}}"
+                                          alt="">
+                                  </a>
+                              </div>
                           </div>
                       </div>
                   </div>
-                    <div class="projects-list background-main gallery dsn-isotope ">
-                        <div *ngFor="let p  of  project" class="work-item border-bottom">
-                            <div class="d-grid grid-lg-2 align-items-center">
-                                <div class="title-meta">
-                                    <div class="metas">
-                                        <span>NACHD-it</span>
-                                    </div>
-                                    <div class="text-inner p-relative">
-                                        <a class="texts effect-ajax" data-dsn-ajax="work">
-                                            <h4 class="heading-h2 sec-title has-box-mod move-circle"
-                                                data-dsn="parallax">
-                                                {{p.titre_fr}}
-                                            </h4>
-                                        </a>
-                                    </div>
-                                    <div class="description border-before mt-30">
-                                        <p>{{p.description_fr}}</p>
-                                    </div>
-                                </div>
-                                <div class="box-img p-relative ">
-                                    <a data-dsn-ajax="work" class="effect-ajax img-next-box before-z-index">
-                                        <img class="cover-bg-img " data-dsn-position="50% 10%" src="{{lien+p.photo}}"
-                                            alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </section>
                 <!-- ========== End Work Section ========== -->
+                <app-contact></app-contact>
                 <app-footer></app-footer>
             </div>
+
         </div>
 
-
     </div>
-    <app-contact></app-contact>
 
 </main>

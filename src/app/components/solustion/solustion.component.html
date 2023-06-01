@@ -1,6 +1,6 @@
 <section class="services pb-section  dsn-container p-relative " data-dsn-title="Our Solution">
   <div class="inner">
-    <h2 class="title-block  border-section-bottom dsn-up">OUR solustion</h2>
+    <h2 class="title-block  border-section-bottom dsn-up">{{'OUR solustion'|translate}}</h2>
   </div>
   <div class="dsn-container section-margin" data-dsn-animate="section">
     <div class="max-w750">
@@ -8,7 +8,8 @@
         nachd UMS
       </h4>
       <p class="dsn-up">
-        {{nachdum.introduction_fr}}
+        {{translate.currentLang=='fr'? nachdum.description_fr :nachdum.description_en}}
+
       </p>
     </div>
   </div>
@@ -37,7 +38,7 @@
         </div>
         <a  routerLink="/Nachd-UMS" class="link-custom v-light-head background-main image-zoom move-circle"
         data-dsn="parallax">
-        More Details
+        {{'More Details'|translate}}
       </a>
       </div>
     </div>

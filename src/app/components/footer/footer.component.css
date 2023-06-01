@@ -1,0 +1,33 @@
+
+  .form-group{
+    width : 100%;
+    float: left;
+
+  }
+  .float-child{
+    width:50%;
+    height:50%;
+   float: left;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .form-group{
+      width : 80%;
+      float: left;
+
+    }
+    .float-child{
+      width:50%;
+      height:50%;
+     float: left;
+
+    }
+    .nounou{
+      width: 180px;
+      height: 130px;
+    }
+/*     .map{
+      width: 400px;
+      height: 300px;;
+    } */
+  }

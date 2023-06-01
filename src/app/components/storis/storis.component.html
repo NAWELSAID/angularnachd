@@ -1,39 +1,39 @@
 <div class="dsn-container d-flex flex-column " data-dsn-title="storis">
-    <h2 class="title-block  border-section-bottom dsn-up">OUR STORIES
-        <br>
-    </h2>
-    <div class="image-container">
-        <div  class="swiper-container ">
-            <div  class="swiper-wrapper transform-move-section move-left">
-                <div  *ngFor="let p  of  Stories" class="swiper-slide" >
-                    <div class="image-item">
-                        <img  class="cover-bg-img " data-dsn-position="10% 10%" style="margin: 10px 10px 10px 10px;" src="{{lien+p.photo}}" alt="">
-                    </div>
-                </div>
-            </div>
+  <h2 class="title-block  border-section-bottom dsn-up">{{'OUR STORIES'|translate}}
+      <br>
+  </h2>
+  <div class="image-container">
+      <div  class="swiper-container ">
+          <div  class="swiper-wrapper transform-move-section move-left">
+              <div  *ngFor="let p  of  Stories" class="swiper-slide" >
+                  <div class="image-item">
+                      <img  class="cover-bg-img " data-dsn-position="10% 10%" style=" width:300px;height: 300px;" src="{{lien+p.photofont}}" alt="">
+                  </div>
+              </div>
+          </div>
 
-            <div class="swiper-container ">
-                <div class="swiper-wrapper transform-move-section">
-                    <div *ngFor="let p  of  Stories2" class="swiper-slide ">
-                        <div class="image-item">
-                            <img src="{{lien+p.photo}}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <div class="swiper-container ">
+              <div class="swiper-wrapper transform-move-section">
+                  <div *ngFor="let p  of  Stories2" class="swiper-slide ">
+                      <div class="image-item">
+                          <img src="{{lien+p.photofont}}" alt="">
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-            <div class="swiper-container ">
-                <div class="swiper-wrapper transform-move-section move-left">
-                    <div *ngFor="let p  of  Stories3" class="swiper-slide">
-                        <div class="image-item">
-                            <img src="{{lien+p.photo}}" alt="">
-                        </div>
-                    </div>
-                </div>
-                <a routerLink="/storis" class="link-custom v-light-head background-main image-zoom move-circle"
-                    data-dsn="parallax">
-                    view all
-                </a>
-            </div>
-        </div>
-    </div>
+          <div class="swiper-container ">
+              <div class="swiper-wrapper transform-move-section move-left">
+                  <div *ngFor="let p  of  Stories3" class="swiper-slide">
+                      <div class="image-item">
+                          <img src="{{lien+p.photofont}}" alt="">
+                      </div>
+                  </div>
+              </div>
+              <a routerLink="/storis" class="link-custom v-light-head background-main image-zoom move-circle"
+                  data-dsn="parallax">
+                  {{'view all'|translate}}
+              </a>
+          </div>
+      </div>
+  </div>

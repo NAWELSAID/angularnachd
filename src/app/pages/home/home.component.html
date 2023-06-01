@@ -1,14 +1,15 @@
 
 
-  <app-header></app-header>
+<app-header></app-header>
+<app-loading *ngIf="isLoading"></app-loading>
   <main class="main-root">
     <div class="site-header dsn-load-animate dsn-container">
       <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
           <div class="inner-header p-relative">
               <div class="main-logo">
                   <a  data-dsn="parallax">
-                       <img  class="light-logo" src="{{lien+tbprofile.nachd_light}}"  alt="5">
-                      <img   class="dark-logo" src="{{lien+tbprofile.nachd_dark}}"  alt="">
+                       <img  class="light-logo" src="{{lien+tbprofile?.nachd_light}}"  alt="5">
+                      <img   class="dark-logo" src="{{lien+tbprofile?.nachd_dark}}"  alt="">
                </a>
               </div>
           </div>
@@ -22,8 +23,8 @@
           <div class="inner-header p-relative">
             <div class="footer-item">
               <a href="" class="logo-footer m-auto">
-                <img src="{{lien+tbprofile.startup_light}}" alt="" class="logo-dark cover-bg-img">
-                <img src="{{lien+tbprofile.startupdark}}" alt="" class="logo-light cover-bg-img">
+                <img src="{{lien+tbprofile?.startup_light}}" alt="" class="logo-dark cover-bg-img">
+                <img src="{{lien+tbprofile?.startupdark}}" alt="" class="logo-light cover-bg-img">
               </a>
             </div>
           </div>
@@ -39,7 +40,7 @@
         </div>
         <div class="text-inner over-hidden">
               <div class="text-stroke-box">
-                  <div class="text-stroke-inner">NACHD-IT</div>
+                  <div class="text-stroke-inner" style="color:aliceblue;">NACHD-IT</div>
               </div>
           </div>
       </div>
@@ -67,13 +68,13 @@ data-dsn-ajax="img">
             <div class="hero-content dsn-hero-parallax-title">
               <h1 class="title has-box-mod">
                 NACHD-IT <br /> <small>
-                         <h3>{{tbprofile.logo}} </h3>
+                         <h3> {{translate.currentLang == 'fr'? tbprofile?.logo_fr: tbprofile?.logo_en}}</h3>
                 </small>
                 <span class="p-absolute w-100 h-70 bottom-0 bg-mod-exclusion left-0 " data-dsn="parallax"></span>
               </h1>
               <div class="description border-before mt-30 mb-30">
                 <h3 class="title-block ah-headline letters scale">
-                    <span class="fw-400">WE DO : </span>
+                    <span class="fw-400">{{'WE DO :'|translate}} </span>
                     <span  class="ah-words-wrapper fw-400">
 
                         <b *ngFor="let p  of what_we_do ; let i = index "  class="{{ i == 0 ? 'is-visible' : ''}}">{{p.name_fr}}</b>
@@ -82,7 +83,13 @@ data-dsn-ajax="img">
             </div>
               <a   routerLink="/about" class="link-custom v-light-head background-main image-zoom move-circle"
                 data-dsn="parallax">
-                About Us
+                {{'ABOUT US'|translate}}
+              </a>
+              <br>
+              <br>
+              <a   routerLink="/formulaire" class="link-custom v-light-head background-main image-zoom move-circle"
+                data-dsn="parallax">
+                Contact
               </a>
             </div>
 
@@ -102,10 +109,12 @@ data-dsn-ajax="img">
           <!-- ========== Footer ========== -->
           <app-footer></app-footer>
           <!-- ========== End Footer ========== -->
+
         </div>
       </div>
 
       <!-- ========== Contact Stories ========== -->
     </div>
+
     <!-- ========== End Contact Stories ========== -->
   </main>

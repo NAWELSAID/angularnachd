@@ -1,7 +1,7 @@
 <section class="testimonials testimonials-two dsn-container p-relative mb-section dsn-swiper "data-dsn-title="Feedback"
   data-dsn-title="Clients See">
   <div class="inner">
-    <h2 class="title-block  border-section-bottom dsn-up">Feedback from our clients.</h2>
+<h2 class="title-block  border-section-bottom dsn-up">{{'FEEDBACK'|translate}}</h2>
   </div>
 
   <div class="testimonial-inner ">
@@ -10,15 +10,15 @@
         <div  *ngFor="let s  of feedback" class="swiper-slide testimonial-item">
           <i class="fas fa-quote-left"></i>
           <div class="testimonial-content">
-            <p class="max-w750 p-large">{{s.feedback}}</p>
+            <p class="max-w750 p-large">{{translate.currentLang == 'fr'? s.feedback_fr: s.feedback_en}}</p>
           </div>
           <div class="testimonial-author d-flex align-items-center">
             <div class="author">
               <img src="{{lien+s.photo}}" alt="">
             </div>
             <div class="author-text">
-              <h4>{{s.name}}</h4>
-              <h5>{{s.position}}</h5>
+              <h4>{{s.name}} </h4>
+              <h5>{{translate.currentLang == 'fr'? s.position_fr: s.position_en}}</h5>
             </div>
           </div>
         </div>

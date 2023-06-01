@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -8,34 +9,33 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class PstorisComponent implements OnInit {
 
-  constructor(private apis:ProductService) { }
+  constructor(private apis:ProductService, public translate:TranslateService) { }
   Stories = [];
-  category= [];
   ariereplan;
   tbprofile;
   lien = this.apis.lien
+  isLoading = false
+
   ngOnInit(): void {
     this.getDataAlllaststories()
-    this.getDataCategoristory()
     this.getariereplan()
     this.getDataprofile()
   }
   getDataAlllaststories(){
+    this.isLoading = true
       this.apis.getDataAlllaststories().subscribe((res: any) => {
         console.log(res)
         this.Stories = res
-      })
-    }
-    getDataCategoristory() {
-      this.apis.getDataCategoristory().subscribe((res: any) => {
-        this.category = res;
-        console.log(this.category)
+        this.isLoading = false
+
       })
     }
     getariereplan() {
+      this.isLoading = true
       this.apis.getariereplan().subscribe((res: any) => {
         console.log('res', res)
         this.ariereplan = res;
+        this.isLoading = false
       })
     }
     getDataprofile() {
@@ -44,5 +44,11 @@ export class PstorisComponent implements OnInit {
         this.tbprofile = res;
 
       })
+    }
+
+
+    multi(p){
+      console.log(p)
+      return JSON.parse(p.photo)
     }
   }

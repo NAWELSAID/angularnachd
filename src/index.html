@@ -9,7 +9,7 @@
     <meta name="keyword" content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple">
 
     <!--  Title -->
-    <title>NACHD it</title>
+    <title>NACHD-IT</title>
     <base href="/">
     <!-- Font Google -->
     <link rel="preload" href="../css2?family=Karla:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -24,7 +24,17 @@
     <link href="assets/css/plugins.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body class="v-dark dsn-effect-scroll dsn-cursor-effect dsn-ajax">
+<button (click)="changeCurrentLang('fr')" *ngIf="Fr" >
+  <div class="icon" style="width: 40px;height: 40px;" >
+  <img id="fr"src="{{lien+ariereplan?.francais}}" alt="">
+</div>
+</button>
+<button (click)="changeCurrentLang('en')" *ngIf="En">
+<div class="icon" style="width: 40px;height: 40px;"  >
+  <img id="en" src="{{lien+ariereplan?.anglais}}"  alt="">
+</div>
+    </button>
+<body class="v-dark dsn-effect-scroll dsn-cursor-effect dsn-ajax" >
   <div class="cursor">
 
     <div class="cursor-helper">
@@ -48,8 +58,8 @@
       <div class="preloader-progress"></div>
     </div>
     <h1 class="title v-middle">
-      <span class="letter-stroke">NACHD it</span>
-      <span class="text-fill">NACHD it</span>
+      <span class="letter-stroke">NACHD-IT</span>
+      <span class="text-fill">NACHD-IT</span>
     </h1>
   </div>
   <!-- ========== End Loading Page ========== -->

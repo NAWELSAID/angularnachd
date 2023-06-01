@@ -62,3 +62,12 @@ body{
 .iti{
   width: 100%;
 }
+@media (max-width: 960px){
+  .contact-btn{
+    position: relative;
+    width: 96px;
+    pointer-events: all;
+    top: -4px;
+  }
+
+}

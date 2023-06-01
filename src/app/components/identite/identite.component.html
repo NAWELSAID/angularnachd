@@ -19,13 +19,12 @@
                 <div class="h-100" data-dsn-grid="move-up">
                     <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" src="{{lien+aboutus.photo_description}}" alt="">
                 </div>
-
             </div>
             <div class="box-info "   >
                 <h2 class="heading-h2 border-section-bottom mb-30 special " style="background-color: transparent;">
-                    Our Identity
+                    {{'Our Identity'|translate}}
                 </h2>
-                <p class="mb-10 special" style="background-color: transparent;">{{aboutus.description_fr}}</p>
+                <p class="mb-10 special" style="background-color: transparent;">{{translate.currentLang == 'fr'? aboutus.description_fr : aboutus.description_an}}</p>
             </div>
         </div>
     </div>

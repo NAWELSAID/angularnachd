@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ProductService } from 'src/app/service/product.service';
 @Component({
   selector: 'app-home',
@@ -8,13 +9,14 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private apis: ProductService) { }
+  constructor(private apis: ProductService , public translate:TranslateService) { }
 
   what_we_do = [{name_fr : ' k' }];
   tbprofile;
   nachdums;
   ariereplan;
   lien = this.apis.lien;
+  isLoading = false
   ngOnInit(): void {
     this.getDataService()
     this.getDataprofile()
@@ -39,10 +41,14 @@ export class HomeComponent implements OnInit {
     })
   }
   getariereplan() {
+    this.isLoading = true
     this.apis.getariereplan().subscribe((res: any) => {
       console.log('res', res)
       this.ariereplan = res;
+      this.isLoading = false
+
     })
   }
+
 }
 

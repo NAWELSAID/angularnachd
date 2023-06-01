@@ -9,8 +9,8 @@
                     <img src="{{lien+p.icon}}" alt="">
                 </div>
                 <div class="content-box">
-                    <h4 class="title-block mt-20">{{p.name_fr}}</h4>
-                    <p class="description mt-20">{{p.description_fr}}
+                    <h4 class="title-block mt-20">{{translate.currentLang == 'fr'? p.name_fr : p.name_en}}</h4>
+                    <p class="description mt-20"> {{translate.currentLang == 'fr'? p.description_fr : p.description_fr}}
                     </p>
                 </div>
             </div>

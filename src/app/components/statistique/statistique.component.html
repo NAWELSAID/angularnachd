@@ -1,10 +1,7 @@
-<div class="col-lg-16">
+<div class="d-grid grid-sm-2 mt-30">
 <div  class="d-grid grid-md-5 align-items-center">
-  <div class="item d-flex align-items-center background-section p-15" style="background: none;">
-
-</div>
-        <div  class="item d-flex align-items-center background-section   p-15" style="background-color: rgb(16, 16, 125);">
-            <h4 class="title-block background-main p-15 mr-10" >{{aboutus.awards}}</h4>
+        <div  class="item d-flex align-items-center background-section   p-15" style="background-color: rgba(241, 241, 246, 0.285);">
+            <h4 class="title-block background-main p-15 mr-10"style="background-color: transparent;" >{{aboutus.awards}}</h4>
             <p>Awards</p>
             <div  class="col-lg-4">
                 <div class="icon"  >
@@ -15,9 +12,9 @@
 
         </div>
 
-        <div class="item d-flex align-items-center background-section p-15" style="background-color: rgb(16, 16, 125);">
+        <div class="item d-flex align-items-center background-section p-15 " style="background-color: rgba(241, 241, 246, 0.285); ">
             <h4 class="title-block background-main p-15 mr-10" style="background-color: transparent;">{{aboutus.nb_projects}}</h4>
-            <p>Projects</p>
+            <p>{{'Projects'|translate}}</p>
             <div  class="col-lg-4">
                 <div class="icon"  >
                     <img src="{{lien+aboutus.iconprojects}}" alt=""  >
@@ -25,8 +22,8 @@
             </div>
         </div>
 
-        <div class="item d-flex align-items-center background-section p-15" style="background-color: rgb(16, 16, 125);">
-            <h4 class="title-block background-main p-15 mr-10" >{{aboutus.nb_clients}}</h4>
+        <div class="item d-flex align-items-center background-section p-15      " style="background-color:rgba(241, 241, 246, 0.285);">
+            <h4 class="title-block background-main p-15 mr-10"style="background-color: transparent;" >{{aboutus.nb_clients}}</h4>
             <p>Clients </p>
             <div  class="col-lg-4">
                 <div class="icon"  >
@@ -38,3 +35,13 @@
 
     </div>
 </div>
+<!--                         <div class="d-grid grid-sm-2 mt-30">
+                          <div *ngFor="let p  of  what_we_do" class="item item-services-header d-flex align-items-center">
+                              <div class="icon p-20  heading-h2 border">
+                                <div class="content">
+
+                                   <h4 class="title-block mt-20" >{{translate.currentLang == 'fr'? p.name_fr: p.name_en}}</h4>
+                              </div>
+                              </div>
+                          </div>
+                      </div> -->

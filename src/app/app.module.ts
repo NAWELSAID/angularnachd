@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClient, HttpClientModule} from '@angular/common/http'
 
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { PostComponent } from './components/post/post.component';
@@ -33,6 +33,10 @@ import { FormulaireComponent } from './pages/formulaire/formulaire.component';
 import { NachdumsfeedbackComponent } from './nachdumsfeedback/nachdumsfeedback.component';
 import { AprojectComponent } from './pages/aproject/aproject.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { LoadingComponent } from './components/loading/loading.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,14 +67,27 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormulaireComponent,
     NachdumsfeedbackComponent,
     AprojectComponent,
+    LoadingComponent,
+
         ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        /* defaultlanguage:'fr', */
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
+}

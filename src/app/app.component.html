@@ -8,20 +8,52 @@
 <!-- ========== social network ========== -->
 <div class="social-network">
   <ul class="socials d-flex  flex-column ">
+    <!-- *ngif(currentLang=='fr') -->
+    <div >
+      <li   >
+        <a  target="_blank">
+          <button (click)="changeCurrentLang('fr')" *ngIf="Fr" target="_blank">
+            <div class="icon" style="width: 40px;height: 40px;" >
+  <!--             <img id="fr"src="{{lien+ariereplan?.francais}}" alt="">
+   -->
+    <i class='fas fa-exchange-alt' style='font-size:30px;color:rgb(51, 0, 255)'></i>
+          </div>
+          </button>
+          <span>Francais</span>
+        </a>
+        <a  target="_blank">
+      <button (click)="changeCurrentLang('en')" *ngIf="En" target="_blank">
+        <div class="icon" style="width: 40px;height: 40px;"  >
+          <!-- <img id="en" src="{{lien+ariereplan?.anglais}}"  alt=""> -->
+<!--           <i class="fa fa-language" style='font-size:30px;color:rgb(51, 0, 255)'></i>
+ -->          <i class='fas fa-exchange-alt' style='font-size:30px;color:blue'></i>
+          <span>Angalis</span>
+        </div>
+            </button>
+          </a>
+
+    </li>
+  </div>
+ <li>
+
+ </li>
+ <!--    @endif -->
+
+
     <li>
-      <a href="{{tbprofile.email}}" target="_blank">
+      <a href="{{tbprofile?.email}}" target="_blank">
         <i class="fab fa-google-plus"></i>
         <span>E-mail</span>
       </a>
     </li>
     <li>
-      <a href="{{tbprofile.facebook}}" target="_blank">
+      <a href="{{tbprofile?.facebook}}" target="_blank">
         <i class="fab fa-facebook-f"></i>
         <span>Facebook</span>
       </a>
     </li>
     <li>
-      <a href="{{tbprofile.Linkedin}}" target="_blank">
+      <a href="{{tbprofile?.Linkedin}}" target="_blank">
         <i class="fab fa-linkedin-in"></i>
         <span>Linkedin</span>
       </a>
@@ -63,17 +95,24 @@
     </svg>
   </div>
 </div>
+<!-- <script>
+function changeCurrentLang() {
+  var fr = document.getElementById("fr");
+  var en = document.getElementById("en");
 
+  if (fr.clicked == true) {
+      fr.style.display="hidden";
+  } else if (en.clicked == true) {
+      en.style.display="hidden";
+  } ;
+};
+changeCurrentLang ();
+</script> -->
 <!-- ========== End Light & Dark Options ========== -->
 
 
 <!-- ========== Scroll Right Page To Top Page ========== -->
-<div class="scroll-to-top">
-  <img src="assets/img/scroll_top.svg" alt="">
-  <div class="box-number v-middle">
-    <span>0%</span>
-  </div>
-</div>
+
 <!-- ========== End Scroll Right Page To Top Page ========== -->
 
 <!-- ========== paginate-right-page ========== -->

@@ -1,6 +1,6 @@
-<section class="testimonials testimonials-two dsn-container p-relative mb-section dsn-swiper" data-dsn-title="Feedback">
+<!-- <section class="testimonials testimonials-two dsn-container p-relative mb-section dsn-swiper" data-dsn-title="Feedback">
   <div class="inner">
-    <h2 class="title-block  border-section-bottom dsn-up">Feedback from our clients.</h2>
+    <h2 class="title-block  border-section-bottom dsn-up">{{'FEEDBACK'|translate}}</h2>
   </div>
 
   <div *ngFor="let s  of feedback" class="testimonial-inner ">
@@ -9,7 +9,7 @@
         <div  class="swiper-slide testimonial-item">
           <i class="fas fa-quote-left"></i>
           <div class="testimonial-content">
-            <p class="max-w750 p-large">{{s.feedback}}</p>
+            <p class="max-w750 p-large">{{translate.currentLang=='fr'? s.feedback_fr :s.feedback_en}}</p>
           </div>
           <div class="testimonial-author d-flex align-items-center">
             <div class="author">
@@ -17,11 +17,58 @@
             </div>
             <div class="author-text">
               <h4>{{s.name}}</h4>
-              <h5>{{s.position}}</h5>
+              <h5>{{translate.currentLang=='fr'? s.position_fr :s.position_en}}</h5>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section> -->
+<section class="testimonials testimonials-two dsn-container p-relative mb-section dsn-swiper "data-dsn-title="Feedback"
+  data-dsn-title="Clients See">
+  <div class="inner">
+<h2 class="title-block  border-section-bottom dsn-up">{{'FEEDBACK'|translate}}</h2>
+  </div>
+
+  <div class="testimonial-inner ">
+    <div class="swiper-container">
+      <div  class="swiper-wrapper">
+        <div  *ngFor="let s  of feedback" class="swiper-slide testimonial-item">
+          <i class="fas fa-quote-left"></i>
+          <div class="testimonial-content">
+            <p class="max-w750 p-large">{{translate.currentLang == 'fr'? s.feedback_fr: s.feedback_en}}</p>
+          </div>
+          <div class="testimonial-author d-flex align-items-center">
+            <div class="author">
+              <img src="{{lien+s.photo}}" alt="">
+            </div>
+            <div class="author-text">
+              <h4>{{s.name}} </h4>
+              <h5>{{translate.currentLang=='fr'? s.position_fr :s.position_en}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control-nav p-absolute w-100  d-flex dsn-container align-items-center  justify-content-between ">
+      <div class="prev-container image-zoom move-circle background-theme" data-dsn="parallax">
+          <svg viewbox="0 0 40 40">
+              <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2">
+              </path>
+              <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45">
+              </polyline>
+          </svg>
+      </div>
+      <div class="next-container image-zoom move-circle background-theme" data-dsn="parallax">
+          <svg viewbox="0 0 40 40">
+              <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2">
+              </path>
+              <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45">
+              </polyline>
+          </svg>
+      </div>
+  </div>
+  </div>
+
 </section>

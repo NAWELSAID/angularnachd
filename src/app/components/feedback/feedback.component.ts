@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ProductService } from 'src/app/service/product.service';
+import { TranslateServiceService } from 'src/app/translate-service.service';
 
 @Component({
   selector: 'app-feedback',
@@ -7,9 +9,9 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-  
 
-  constructor(private apis: ProductService) { }
+
+  constructor(private apis: ProductService,public translate:TranslateService) { }
    feedback = [];
   lien = this.apis.lien
   ngOnInit(): void {
@@ -21,4 +23,3 @@ export class FeedbackComponent implements OnInit {
       this.feedback = res;
     })
   }}
-  

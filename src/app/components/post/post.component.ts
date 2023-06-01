@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class PostComponent implements OnInit {
 
-  constructor(private apis: ProductService) { }
+  constructor(private apis: ProductService, public translate:TranslateService) { }
   posts = [];
   lien = this.apis.lien;
   ngOnInit(): void {

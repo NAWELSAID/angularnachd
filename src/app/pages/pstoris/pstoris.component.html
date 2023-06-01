@@ -1,3 +1,4 @@
+<app-loading *ngIf="isLoading"></app-loading>
 <app-header></app-header>
 <main class="main-root">
   <div class="site-header dsn-load-animate dsn-container">
@@ -65,68 +66,55 @@
                     <div class="hero-content dsn-container">
                         <div class="has-box-mod p-relative move-circle" data-dsn="parallax" data-dsn-color="#393531">
                             <h1 class="title">
-                                <span class="letter-stroke">Our </span> <br>
-                                <span class="line-bg-left pl-80">Best Portfolio</span>
+                                <span class="letter-stroke"> {{'Our Memories'|translate}} </span> <br>
                             </h1>
                         </div>
 
                         <div class="metas mt-25">
-                            <span class="text-uppercase"> Some Of Our Latest storis</span>
+                            <span class="text-uppercase"> {{'Some Of Our Latest storis'|translate}}</span>
                         </div>
                     </div>
 
                 </div>
 
             </header>
-
-            <div class="wrapper ">
+            <div class="section-image section-move-image v-light section-padding p-relative">
                 <section class="our-work dsn-container dsn-filter p-relative section-margin">
                     <div class="filtering d-flex justify-content-between mb-50">
-                        <h3 class="title-block border-before">Our Latest</h3>
+                        <h3 class="title-block border-before">{{'Our Memories'|translate}}</h3>
                     </div>
 
 
-                    <div class="projects-list gallery v-dark-head work-hover d-grid grid-md-2 grid-lg-3 dsn-isotope"
-                        data-dsn-item=".work-item">
+                    <div class="gallery-portfolio section-margin dsn-stories v-light-head" data-dsn-rowheight="300" data-dsn-margins="15">
+                      <div *ngFor="let p  of  Stories" class="dsn-stories-gallery">
+                        <a *ngFor="let p  of multi(p)" href="{{lien+p}}"></a>
 
-                         <div *ngFor="let p  of  Stories" class="work-item p-relative overflow-hidden ">
-                            <div  class="dsn-stories-gallery ">
-                                <a href="{{lien+p.photo}}"></a>
-                                <a href="{{lien+p.photo_deux}}"></a>
-                                <a href="{{lien+p.photo_trois}}"></a>
-                                <a href="{{lien+p.photo_quatre}}"></a>
-                            </div>
-                            <div class="img-next-box p-relative before-z-index" >
-                                <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt="">
-                            </div>
-
-                            <div class="box-content w-100 mt-20">
-                                <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"
-                                    data-dsn-color="#393531">
-                                    {{p.title_fr}} <br>{{p.date}}
-                                </h4>
-                            </div>
-                        </div>
+                          <div class="box-content w-100 mt-20" class="postt">
+                              <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"
+                                  data-dsn-color="#393531">
+                                  {{translate.currentLang=='fr'? p.title_fr :p.title_en}} <br> {{p.date}}
+                              </h4>
+                          </div>
                       </div>
+                    </div>
                     </section>
-<!--                         <div *ngFor="let p  of  Stories"
-                            class="work-item p-relative overflow-hidden {{'cat'+p.category}}">
-                            <div class="img-next-box p-relative before-z-index">
-                                <img class="cover-bg-img " data-dsn-position="10% 10%" src="{{lien+p.photo}}" alt="">
-                            </div>
-                            <div class="box-content w-100 mt-20">
-                                <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"
-                                    data-dsn-color="#393531">
-                                    {{p.title_fr}} <br>{{p.date}}
-                                </h4>
-                            </div>
-                        </div> -->
+                        <!-- <section class="our-work work-list dsn-filter  dsn-filter p-relative section-margin">
+                          <div class="filtering d-flex align-items-center dsn-container justify-content-between mb-50">
+                              <h3 class="title-block border-before">{{'Our Memories'|translate}}</h3>
+                          </div>
+                          <div class="gallery-portfolio section-margin dsn-stories v-dark-head" data-dsn-rowheight="300" data-dsn-margins="15">
+                              <div *ngFor="let p  of  Stories" class="dsn-stories-gallery">
+                                <a *ngFor="let p  of multi(p)" href="{{lien+p}}"></a>
+                                  <h4 class="sm-title-block has-box-mod move-circle" data-dsn="parallax">
+                                  {{translate.currentLang=='fr'? p.title_fr :p.title_en}} <br>{{p.date}}
+                                  </h4>
+                              </div>
+                          </div>
+                      </section> -->
                 <app-footer></app-footer>
                 <!-- ========== End Footer ========== -->
-
-            </div>
         </div>
-
+        </div>
 
     </div>
     <app-contact></app-contact>

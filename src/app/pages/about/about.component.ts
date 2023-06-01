@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -8,14 +9,16 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private apis: ProductService) { }
+  constructor(private apis: ProductService, public translate:TranslateService) { }
   what_we_do = [];
-    tbprofile;
+  tbprofile;
   ariereplan;
   aboutus;
   lien = this.apis.lien;
   x= false
   lien_video = 'assets/photo/video.mp4'
+  isLoading = false
+
   ngOnInit(): void {
     this.script()
     this.getDataprofile()
@@ -37,9 +40,11 @@ export class AboutComponent implements OnInit {
     })
   }
   getariereplan() {
+    this.isLoading = true
     this.apis.getariereplan().subscribe((res: any) => {
       console.log('res', res)
       this.ariereplan = res;
+      this.isLoading = false
     })
   }
   getdataaboutus() {

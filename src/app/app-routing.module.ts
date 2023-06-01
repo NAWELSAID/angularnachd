@@ -18,12 +18,13 @@ import { PpostComponent } from './pages/ppost/ppost.component';
 import { PprojectComponent } from './pages/pproject/pproject.component';
 import { PsolustionComponent } from './pages/psolustion/psolustion.component';
 import { PstorisComponent } from './pages/pstoris/pstoris.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 
 const routes: Routes = [
-  {path :"home" , component : HomeComponent },
   {path :"" , component : HomeComponent },
+  {path :"home" , component : HomeComponent },
   {path :"posts" , component : PpostComponent },
   {path :"storis" , component : PstorisComponent },
   {path :"Nachd-UMS" , component : PsolustionComponent },
@@ -40,6 +41,8 @@ const routes: Routes = [
   {path :"formulaire" , component :FormulaireComponent },
   {path :"nachdumsfeedback" , component :NachdumsfeedbackComponent },
   {path :"aproject" , component :AprojectComponent },
+  {path :"loading" , component :LoadingComponent },
+
 
 
 

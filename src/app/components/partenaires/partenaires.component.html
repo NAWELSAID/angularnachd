@@ -1,15 +1,23 @@
                 <!-- ========== brand-client ========== -->
-                <div class="dsn-container brand-client mb-section " data-dsn-title="our clients">
+                <div class="dsn-container brand-client mb-section " data-dsn-title="OUR Partners">
                   <div apropos.content class="box-info">
                       <h2 class="heading-h2 border-section-bottom mb-30">
-                          OUR Partenaires
+                        {{'OUR Partners'|translate}}
                       </h2>
-                  <div class="box-map section-margin">
-                  <div class="wrapper-client d-grid grid-lg-1  grid-md-6 grid dsn-isotope " data-dsn-item=".logo-box">
-                      <div *ngFor="let p  of  partenaire"  class="logo-box ">
-                          <div class="logo-box-inner  background-section nounou">
-                              <img src="{{lien+p.logo}}" alt="">
-                          </div>
+                      <div class="d-grid grid-sm-1 mt-30">
+                        <div  class="d-grid grid-md-3 align-items-center" >
+                          <div *ngFor="let p  of  partenaire"  class="logo-box pt-30 mt-30 "
+                          style="    display: block;
+                          margin-left: auto;
+                          margin-right: auto" class="dsn-stories-gallery">
+                          <div  class="logo-box-inner  background-section " style="background-color: transparent;">
+                              <img src="{{lien+p.logo}}" style="width: 250px;height: 150px;" alt="">
+                                <h6 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"data-dsn-color="#393531">
+                                    {{p.name}}
+                                </h6>
+                                <br>
+                            </div>
+
                       </div>
                   </div>
               </div>

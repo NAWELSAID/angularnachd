@@ -1,3 +1,4 @@
+<app-loading *ngIf="isLoading"></app-loading>
 <app-header></app-header>
 <main class="main-root">
 
@@ -60,10 +61,9 @@
                         <div class="hero-img p-absolute w-100  h-100 before-z-index z-index-0" data-overlay="5"
                             data-dsn-ajax="img">
                             <img class="cover-bg-img dsn-hero-parallax-img "
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                data-dsn-src="assets/photo/image10.jpg"
-                                data-dsn-srcset="assets/photo/image10.jpg 1800w,assets/photo/image10.jpg 768w" alt=""
-                                data-dsn-position="10% 10%">
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            src="{{lien+ariereplan.nachdums}}"
+                            data-dsn-position="10% 10%">
                         </div>
                         <div class="hero-content dsn-container">
                             <div class="box-title ">
@@ -85,12 +85,12 @@
                                 <div class="intro-text p-relative">
                                     <div class="inner">
                                         <h2 class="title-block  border-section-bottom dsn-up">
-                                            introduction the project
+                                            {{'introduction the project'|translate}}
                                         </h2>
-                                        <p class="dsn-up mt-30 max-w750"> {{nachdums.introduction_fr}}</p>
-                                        <a href="{{nachdums.line}}" target="_blank"
+                                        <p class="dsn-up mt-30 max-w750">{{translate.currentLang=='fr'? nachdums?.introduction_fr :nachdums?.introduction_en}}</p>
+                                        <a href="{{nachdums?.line}}" target="_blank"
                                             class="btn-arrow w-100 d-flex align-items-center justify-content-between mt-30">
-                                            <span>Visit site</span>
+                                            <span>{{'Visit site'|translate}}</span>
                                             <svg width="24" height="24" viewbox="0 0 24 24"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -108,15 +108,15 @@
                                 <ul class="p-relative project-info ms-mt-block">
                                     <li>
                                         <h5>SERVICES</h5>
-                                        <span>{{nachdums.domainedapplication}}</span>
+                                        <span>{{translate.currentLang=='fr'? nachdums?.domainedapplication_fr :nachdums?.domainedapplication_en}}</span>
                                     </li>
                                     <li>
-                                        <h5>Industry </h5>
-                                        <span>{{nachdums.devolope_par}}</span>
+                                        <h5>{{'Industry'|translate}} </h5>
+                                        <span>{{nachdums?.devolope_par}}</span>
                                     </li>
                                     <li>
-                                        <h5>Year</h5>
-                                        <span> {{nachdums.date}}</span>
+                                        <h5>{{'Year'|translate}}</h5>
+                                        <span> {{nachdums?.date}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -134,7 +134,7 @@
                                 <div class="d-grid p-relative grid-lg-2 padding-block z-index-1">
                                     <div class="box-img">
                                         <div class="h-100" data-dsn-grid="move-up">
-                                            <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" src="{{lien+nachdums.icon_nachdums}}" alt="">
+                                            <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" src="{{lien+nachdums?.icon_nachdums}}" alt="">
                                         </div>
 
                                     </div>
@@ -142,7 +142,7 @@
                                         <h2 class="heading-h2 border-section-bottom mb-30 special ">
                                             what is NACHD UMS
                                         </h2>
-                                        <p class="mb-10 special">{{nachdums.description_fr}}</p>
+                                        <p class="mb-10 special">{{nachdums?.description_fr}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -151,18 +151,18 @@
                     <section class="blog dsn-container p-relative section-margin" data-dsn-title="Our services">
                         <div class="inner">
                             <h2 class="title-block  border-section-bottom dsn-up">
-                                our services</h2>
+                                {{'our services'|translate}}</h2>
                         </div>
 
                         <div  class="blog-content">
                             <div *ngFor="let p  of  service" class="blog-item p-relative pt-50 pb-50 border-bottom">
                                 <div  class="blog-item-inner p-relative spec">
                                     <div  class="left-box">
-                                            <h4 class="title-block">{{p.service_fr}}</h4>
+                                            <h4 class="title-block">{{translate.currentLang=='fr'? p.service_fr :p.service_en}} </h4>
                                     </div>
 
                                     <div class="right-box">
-                                        <p class="max-w570">{{p.description_fr}}</p>
+                                        <p class="max-w570">{{translate.currentLang=='fr'? p.description_fr :p.description_en}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                             <div class="before-z-index" data-dsn-grid="move-up" data-overlay="5">
                                 <img class="cover-bg-img"
                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                   src="{{lien+nachdums.icon_nachdums}}"
+                                   src="{{lien+nachdums?.icon_nachdums}}"
                                     alt="">
                             </div>
                             <a href="https://vimeo.com/175353205" class="vid c-hidden v-middle z-index-2">
@@ -188,20 +188,34 @@
                     <!-- ========== End Video Section ========== -->
 
                     <!-- ========== 2 col image with pop image ========== -->
-                    <div class="section-margin has-popup over-hidden p-relative" data-dsn-title="Gallery" >
+<!--                     <div class="section-margin has-popup over-hidden p-relative" data-dsn-title="Gallery" >
                       <div  class="section-margin has-popup over-hidden p-relative">
-                        <div *ngfor="let p  of multi; let i = index"  class="dsn-container">
+                        <div *ngFor="let p  of  Stories"  class="dsn-container">
                             <div   class="d-grid grid-md-2  over-hidden">
-                                <a
-                                    class="p-relative over-hidden h-v-60 d-flex">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        src="{{lien+p}}">
+                                <a *ngFor="let p  of multii(p)" href="{{lien+p}}">
                                 </a>
                             </div>
                         </div>
                     </div>
-                    </div>
+                    </div> -->
+<!--                     <div class="gallery-portfolio section-margin dsn-stories v-dark-head" data-dsn-rowheight="300" data-dsn-margins="15">
+                      <div *ngFor="let p  of  Stories" class="dsn-stories-gallery">
+                        <a *ngFor="let p  of multii(p)" href="{{lien+p}}"></a>
 
+                          <div class="img-next-box p-relative before-z-index" >
+                              <img class="cover-bg-img " data-dsn-position="10% 10%" alt="">
+                          </div>
+
+                          <div class="box-content w-100 mt-20" class="postt">
+                              <h4 class="title-block sec-title has-box-mod move-circle" data-dsn="parallax"
+                                  data-dsn-color="#393531">
+                                  {{translate.currentLang=='fr'? p.title_fr :p.title_en}} <br> {{p.date}}
+                              </h4>
+                          </div>
+
+
+                      </div>
+                    </div> -->
                     <app-footer></app-footer>
                 </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { ProductService } from 'src/app/service/product.service';
 import Swal from 'sweetalert2';
 
@@ -11,52 +12,62 @@ import Swal from 'sweetalert2';
 export class FormulaireComponent implements OnInit {
   contact = new FormGroup({
     name: new FormControl('',[Validators.required,Validators.minLength(4)]),
-    phone: new FormControl('',[Validators.required,Validators.min(11111111),Validators.max(99999999) ]),
+    phone: new FormControl('',[Validators.required,Validators.pattern("^[0-9]{8}$")]),
     countryCode: new FormControl('',[Validators.required]),
      email: new FormControl('',[Validators.required,Validators.email]),
      demande: new FormControl('',Validators.required)
    });
 
-  constructor(private apis: ProductService) {  }
-  tbprofile;
+  constructor(private apis: ProductService, public translate:TranslateService) {
+
+  }
   ariereplan;
+  tbprofile;
   lien = this.apis.lien;
+  isLoading = false
   ngOnInit(): void {
-    this.getDataprofile()
     this.getariereplan()
+    this.getDataprofile()
+
+
+  }
+  getariereplan() {
+    this.isLoading = true
+    this.apis.getariereplan().subscribe((res: any) => {
+      console.log('res', res)
+      this.ariereplan = res;
+      this.isLoading = false
+    })
   }
   getDataprofile() {
     this.apis.getDataprofile().subscribe((res: any) => {
       console.log('res',res)
       this.tbprofile = res;
-
-    })
-  }
-  getariereplan() {
-    this.apis.getariereplan().subscribe((res: any) => {
-      console.log('res', res)
-      this.ariereplan = res;
-    })
-  }
+    })}
   onSubmit(): void {
     if(this.contact.valid){
-      console.log("nounou", this.contact.value);
+
+      console.log("contact", this.contact.value);
       let body ={...this.contact.value};
       this.apis.setDatacontact(body).subscribe(()=>{
+        this.contact.reset();
+
           Swal.fire({
           icon: 'success',
           title: 'Message bien envoyé',
-          text: 'we will answer you a few moment later',
           showConfirmButton: false,
         })
-        this.contact.reset();
       })
     }
   else{
+    console.log(this.contact.get('name').errors)
+    console.log(this.contact.get('phone').errors)
+    console.log(this.contact.get('email').errors)
+    console.log(this.contact.get('demande').errors)
+    console.log(this.contact.get('countryCode').errors)
     Swal.fire({
-      icon: 'error',
-      text: 'Something went wrong!',
-      title: 'vérifier vos coordonnées',
+          icon: 'error',
+          title: 'vérifier vos coordonnées',
     })
   }
 }
@@ -67,4 +78,5 @@ get phone() {
   get countryCode() {
     return this.contact.get('countryCode'); }
 }
+
 

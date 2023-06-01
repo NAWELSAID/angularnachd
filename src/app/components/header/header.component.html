@@ -7,24 +7,29 @@
 
     <div class="menu-icon d-flex align-items-baseline" >
         <div class="text-menu p-relative  font-heading text-transform-upper">
-          <div class="p-absolute text-button">Menu</div>
-          <div class="p-absolute text-open">Open</div>
-          <div class="p-absolute text-close">Close</div>
+          <div class="p-absolute text-button"></div>
         </div>
+
         <div class="icon-m" data-dsn="parallax" data-dsn-move="10" >
-          <span class="menu-icon-line p-relative d-inline-block icon-top" style="background-color: rgb(251, 1, 1);"></span>
-          <span class="menu-icon-line p-relative d-inline-block icon-center"style="background-color: brown;"></span>
-          <span class="menu-icon-line p-relative d-block icon-bottom"style="background-color: brown;">Menu</span>
+          <button  >
+
+            <div class="icon" style="width: 40px;height: 40px;" >
+<!--               <i class="fab fa-menu"> </i>
+ -->
+            <i class="fas fa-bars" style="width: 40px;height: 40px;color: blue;font-size:40px"></i>
+<!--  <img id="fr"src="{{lien+ariereplan?.menu}}" alt="">
+ -->       </div>
+          </button>
         </div>
       </div>
-      
+
       <nav class="accent-menu dsn-container main-navigation p-absolute  w-100  d-flex align-items-baseline ">
         <div class="menu-cover-title">Menu</div>
         <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
 
           <li class="dsn-active dsn-drop-down">
             <a routerLink="/home" class="user-no-selection">
-              <span class="dsn-title-menu " >Home</span>
+              <span class="dsn-title-menu " >{{'HOME' | translate }}</span>
               <span class="dsn-meta-menu">01</span>
               <span class="dsn-bg-arrow"></span>
             </a>
@@ -32,7 +37,7 @@
 
           <li class="dsn-drop-down">
             <a routerLink="/about" class="user-no-selection">
-              <span class="dsn-title-menu">About Us</span>
+              <span class="dsn-title-menu">{{'ABOUT US'|translate}}</span>
               <span class="dsn-meta-menu">02</span>
               <span class="dsn-bg-arrow"></span>
             </a>
@@ -40,7 +45,7 @@
 
           <li class="dsn-drop-down">
             <a routerLink="/storis" class="user-no-selection">
-              <span class="dsn-title-menu">Storis</span>
+              <span class="dsn-title-menu">{{'Storis'|translate}}</span>
               <span class="dsn-meta-menu">03</span>
               <span class="dsn-bg-arrow"></span>
             </a>
@@ -48,7 +53,7 @@
 
           <li class="dsn-drop-down">
             <a routerLink="/posts" class="user-no-selection">
-              <span class="dsn-title-menu">NEW post</span>
+              <span class="dsn-title-menu">{{'New Posts'|translate}}</span>
               <span class="dsn-meta-menu">04</span>
               <span class="dsn-bg-arrow"></span>
             </a>
@@ -63,14 +68,14 @@
 
           <li class="dsn-drop-down">
             <a routerLink="/projects" class="user-no-selection">
-              <span class="dsn-title-menu">Projects</span>
+              <span class="dsn-title-menu">{{'Projects'|translate}}</span>
               <span class="dsn-meta-menu">07</span>
               <span class="dsn-bg-arrow"></span>
             </a>
           </li>
           <li class="dsn-drop-down">
             <a routerLink="/formulaire" class="user-no-selection">
-              <span class="dsn-title-menu">let's do a project</span>
+              <span class="dsn-title-menu">{{'Do a project'|translate}}</span>
               <span class="dsn-meta-menu">08</span>
               <span class="dsn-bg-arrow"></span>
             </a>
@@ -81,10 +86,10 @@
           <div class="nav__info">
             <div class="nav-content">
               <p class="title-line">
-                localisation
+                {{'localisation'|translate}}
               </p>
               <p>
-                {{tbprofile.localisation }}
+                {{translate.currentLang=='fr'? tbprofile?.localisation_fr :tbprofile?.localisation_en}}
               </p>
             </div>
             <div class="nav-content">
@@ -92,7 +97,7 @@
                 Contact
               </p>
               <p class="links over-hidden">
-                <a href="#"  class="link-hover">{{tbprofile.phone }}
+                <a href="#"  class="link-hover">{{tbprofile?.phone }}
                 </a>
               </p>
             </div>
@@ -100,15 +105,16 @@
           <div class="nav-social nav-content">
             <div class="nav-social-inner p-relative">
               <p class="title-line">
-                Follow us</p>
+                {{'Follow us|translate'}}</p>
               <ul>
+
                 <li>
-                  <a href="{{tbprofile.facebook}}" target="_blank" rel="nofollow">facebook.
+                  <a href="{{tbprofile?.facebook}}" target="_blank" rel="nofollow">facebook.
                     <div class="icon-circle"></div>
                   </a>
                 </li>
                 <li>
-                  <a href="{{tbprofile.linkedin }}" target="_blank" rel="nofollow">Linkedin.
+                  <a href="{{tbprofile?.linkedin }}" target="_blank" rel="nofollow">Linkedin.
                     <div class="icon-circle"></div>
                   </a>
                 </li>

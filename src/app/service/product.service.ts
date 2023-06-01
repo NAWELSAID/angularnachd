@@ -8,10 +8,10 @@ export class ProductService {
 
   constructor(private http : HttpClient) { }
 
-  server = 'http://localhost:8000/api/'
-  lien= "http://localhost/laravelnachdtemplate/storage/app/public/";
-  /* server = 'https://nawelsaid.alwaysdata.net/laravelnachdtemplate/public/api/'
-  lien= "https://nawelsaid.alwaysdata.net/laravelnachdtemplate/storage/app/public/"; */
+/*   server = 'http://localhost:8000/api/'
+  lien= "http://localhost/laravelnachdtemplate/storage/app/public/"; */
+  server = 'https://nawelsaid.alwaysdata.net/laravelnachdtemplate/public/api/'
+  lien= "https://nawelsaid.alwaysdata.net/laravelnachdtemplate/storage/app/public/";
 
 
 getData(){
@@ -86,7 +86,8 @@ getDatanachdumsfeedback(){
 setDatacontact(body){
   return this.http.post(this.server+'datacontact' , body)
 }
-getDatabyprojects(){
-  return this.http.get(this.server+'databyproject')
+getDatabyprojects(id){
+  return this.http.get(this.server+'databyproject/'+id)
 }
+
 }

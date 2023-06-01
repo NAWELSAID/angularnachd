@@ -1,14 +1,14 @@
 <section class="team dsn-container section-margin" data-dsn-title="Our Team">
 
     <div class="inner">
-      <h2 class="title-block  border-section-bottom dsn-up"> Our Team </h2>
+      <h2 class="title-block  border-section-bottom dsn-up"> {{'Our Team'|translate}} </h2>
     </div>
 
     <div class="team-inner d-grid grid-lg-3 grid-md-2">
       <div *ngFor="let t  of membre " class="team-item grid-item">
         <div  class="team-item-inner">
           <div  class="box-text border-before">
-            <span class="position">{{t.position}} </span>
+            <span class="position">  {{translate.currentLang=='fr'? t.position_fr :t.position_en}}</span>
             <h4 class="name">{{t.name}} </h4>
           </div>
           <div class="box-img">

@@ -1,21 +1,21 @@
 <section class="our-work dsn-container dsn-filter p-relative section-margin" data-dsn-title="Lasts projects">
   <div class="inner">
-    <h2 class="title-block  border-section-bottom dsn-up">Projects</h2>
+    <h2 class="title-block  border-section-bottom dsn-up">{{'Projects'|translate}}</h2>
   </div>
 
   <div class="filtering d-flex justify-content-between mb-50">
-    <h3 class="title-block border-before">Latest Works</h3>
+    <h3 class="title-block border-before">{{'Latest Works'|translate}}</h3>
     <div class="filtering-wrap w-auto">
       <div class="filtering">
         <div class="selector"></div>
-         <button type="button" data-filter1="*" class="active">All</button>
-         <button  type="button" *ngFor="let p  of  category " [attr.data-filter]="'.cat'+p.id" >
-          {{p.name_fr}} </button>
+        <button type="button" data-filter="*" class="{{select == 'all' ? 'active': ''}}" (click)="allproject()">All</button>
+        <button type="button"  *ngFor="let p  of  what_we_do" class="{{select == p.id ? 'active': ''}}" (click)="onSubmit(p.id)">
+          {{translate.currentLang == 'fr'? p.name_fr: p.name_en}} </button>
 <!--           <button type="button" data-filter="*" class="active">All</button>
           <button type="button" *ngFor="let p  of  category" [attr.data-filter]="'.cat'+p.id">
             {{p.name_fr}} </button> -->
       </div>
-    </div> 
+    </div>
   </div>
 
   <div class="projects-list gallery work-gallery d-grid grid-md-2 grid-lg-3 dsn-isotope grid"
@@ -27,7 +27,7 @@
         </div>
         <div class="box-content w-100 border-before mt-20">
           <h4 class="title-block sec-title">
-            {{p.titre_fr}}
+            {{translate.currentLang=='fr'? p.titre_fr :p.titre_en}}
           </h4>
           <div class="metas">
           </div>
@@ -39,7 +39,7 @@
   <div>
     <a routerLink="/projects" class="link-custom v-light-head background-main image-zoom move-circle"
       data-dsn="parallax">
-      view all
+      {{'view all'|translate}}
     </a>
   </div>
 </section>

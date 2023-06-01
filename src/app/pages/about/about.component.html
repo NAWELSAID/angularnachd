@@ -1,3 +1,4 @@
+<app-loading *ngIf="isLoading"></app-loading>
 <app-header></app-header>
 <main class="main-root">
     <div class="site-header dsn-load-animate dsn-container">
@@ -41,7 +42,7 @@
           </div>
           <div class="text-inner over-hidden" >
                 <div class="text-stroke-box">
-                    <div class="text-stroke-inner"  >About us</div>
+                    <div class="text-stroke-inner"    >About us</div>
                 </div>
             </div>
         </div>
@@ -67,12 +68,12 @@
                     <div class="dsn-container box-title p-relative z-index-1">
                         <div class="subtitle line-shap line-shap-after d-inline-block mb-20">
                             <span class="p-10 background-section">
-                               {{aboutus.slide_title_fr}}
+                               {{translate.currentLang == 'fr'? aboutus.slide_title_fr: aboutus.slide_title_an}}
                             </span>
                         </div>
 
                         <h1 class="title  p-relative">NACHD IT</h1>
-                        <p class="mt-20 max-w570">{{aboutus.slide_content_fr}}</p>
+                        <p class="mt-20 max-w570">{{translate.currentLang == 'fr'? aboutus.slide_content_fr: aboutus.slide_content_an}}</p>
 <!--                         <div class="d-grid grid-sm-2 mt-30">
                             <div class="item item-services-header d-flex align-items-center">
                                 <div class="icon p-20  heading-h2 border">
@@ -98,16 +99,17 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class="d-grid grid-sm-2 mt-30">
+<!--                         <div class="d-grid grid-sm-2 mt-30">
                           <div *ngFor="let p  of  what_we_do" class="item item-services-header d-flex align-items-center">
                               <div class="icon p-20  heading-h2 border">
                                 <div class="content">
-                                  <h4 class="title-block mt-20" >{{p.name_fr}}</h4>
+
+                                   <h4 class="title-block mt-20" >{{translate.currentLang == 'fr'? p.name_fr: p.name_en}}</h4>
                               </div>
                               </div>
                           </div>
-                      </div>
-                        <div class="d-grid grid-sm-2 mt-30" style="display: block;">
+                      </div> -->
+                        <div class="d-grid grid-sm-2 mt-30" >
                             <app-statistique></app-statistique>
                         </div>
 
@@ -145,8 +147,9 @@
                         </a>
                     </div>
                 </div> -->
-            </div>
                 <app-footer></app-footer>
+
+            </div>
             </div>
         </div>
         <!-- ========== Contact Form Model ========== -->
